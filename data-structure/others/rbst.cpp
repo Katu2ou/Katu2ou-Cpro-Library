@@ -1,126 +1,87 @@
-//Randomized Binary Search Tree
-//平衡二分探索木の一種
-/*
-値の挿入・値の削除・
-*/
-//出典: https://qiita.com/drken/items/1b7e6e459c24a83bb7fd
-
 /*
 <Randomized Binary Search Tree / RBST>
-    平衡二分探索木の一種．
-    merge/split を基本操作として，乱択により木の高さを期待 O(log N) に保つ．
-
-    この実装では，値の昇順に要素を管理する multiset 的な用途を想定している．
-    重複要素も保持できる．
+    - 平衡二分探索木の一種
+    - merge/split を基本操作として，乱択により木の高さを期待 O(log N) に保つ
+    - 値の昇順に要素を管理する multiset 的な用途を想定する
+    - 重複要素も保持できる
 
 [実装/関数]
-    - RBST<VAL>()
-        : 空の RBST を作る．
+    - RBST<VAL> st
+        空の RBST を作る
+
+    - RBST<VAL> st(VAL sum_unity)
+        sum の単位元を指定して RBST を作る
 
     - int size()
-        : 現在の要素数を返す．
+        現在の要素数を返す
+
+    - bool empty()
+        空かどうかを返す
 
     - VAL sum()
-        : 木全体に含まれる値の総和を返す．
-          VAL には + が定義されている必要がある．
+        木全体に含まれる値の総和を返す
 
     - int lowerBound(VAL val)
-        : val 以上である最初の要素の位置を返す．
-          すなわち，val 未満の要素数を返す．
+        val 以上である最初の要素の位置を返す
+        すなわち，val 未満の要素数を返す
 
     - int upperBound(VAL val)
-        : val より大きい最初の要素の位置を返す．
-          すなわち，val 以下の要素数を返す．
+        val より大きい最初の要素の位置を返す
+        すなわち，val 以下の要素数を返す
 
     - int count(VAL val)
-        : val と等しい要素の個数を返す．
+        val と等しい要素の個数を返す
 
     - VAL get(int k)
-        : 0-indexed で k 番目に小さい値を返す．
-          k が範囲外の場合の挙動には注意する．
+        0-indexed で k 番目に小さい値を返す
 
     - pair<NODE*, NODE*> split(NODE* node, int k)
-        : node を根とする木を，
-              [0, k), [k, n)
-          の2つに分割する．
-          返り値は {左側の根, 右側の根}．
+        node を根とする木を [0,k), [k,n) に分割する
 
     - RBST split(int k)
-        : 現在の木を [0, k), [k, n) に分割する．
-          自身には [0, k) 側が残り，返り値として [k, n) 側の RBST を返す．
+        現在の木を [0,k), [k,n) に分割する
+        自身には [0,k) 側が残り，返り値として [k,n) 側を返す
 
     - NODE* merge(NODE* left, NODE* right)
-        : 2つの木 left, right を併合する．
-          二分探索木として使う場合，
-              left の全要素 <= right の全要素
-          が成り立っている必要がある．
+        2つの木を併合する
+        left の全要素 <= right の全要素 が必要
 
-    - void merge(RBST add)
-        : 現在の木と add を併合する．
-          同様に，現在の木の全要素 <= add の全要素である必要がある．
+    - void merge(RBST& add)
+        現在の木と add を併合する
+        add 側は空になる
 
     - void insert(VAL val)
-        : val を1つ挿入する．
-          lowerBound(val) の位置で split し，その間に新しいノードを挿入する．
-          重複要素も挿入できる．
+        val を1つ挿入する
 
-    - void erase(VAL val)
-        : val を1つ削除する．
-          val が存在しない場合は何もしない．
-          同じ値が複数ある場合，そのうち1つだけを削除する．
+    - bool erase(VAL val)
+        val を1つ削除する
+        削除できたら true，存在しなければ false を返す
 
     - void print()
-        : 現在の要素を昇順に出力する．
-          デバッグ用．
+        現在の要素を昇順に出力する
 
 [計算量]
-    - insert(val)
-        : 期待 O(log N)
+    - insert, erase
+        期待 O(log N)
 
-    - erase(val)
-        : 期待 O(log N)
+    - lowerBound, upperBound, count, get
+        期待 O(log N)
 
-    - lowerBound(val), upperBound(val), count(val)
-        : 期待 O(log N)
+    - split, merge
+        期待 O(log N)
 
-    - get(k)
-        : 期待 O(log N)
-
-    - split(k), merge(...)
-        : 期待 O(log N)
-
-    - size(), sum()
-        : O(1)
+    - size, empty, sum
+        O(1)
 
 [備考]
-    - 各ノードは
-          val  : そのノードの値
-          size : 部分木サイズ
-          sum  : 部分木の値の総和
-      を持つ．
+    - VAL には比較演算子 <=, >= と，加算 + が必要
+    - sum を使わない場合でも update 内で + を使っているので注意
+    - merge(left, right) は，一般の2つのBSTを自動でソートして混ぜる操作ではない
+      必ず left 側の全要素 <= right 側の全要素 が必要
+    - new でノードを確保しているが delete はしていない
+      競プロ用途では問題になりにくいが，長時間実行では注意
 
-    - update(node) により，子の情報から size, sum を再計算する．
-
-    - push(node) は遅延伝播用の関数である．
-      現在は空実装だが，区間反転などを入れたい場合は NODE::push() に処理を書く．
-
-    - VAL には少なくとも比較演算子 <, <=, >= と，加算 + が必要である．
-      sum を使わない場合でも，この実装では update 内で + を使っているため注意する．
-
-    - get(k) の範囲外アクセス時に -1 を返しているため，
-      VAL が int 以外の場合はそのままだと不自然な場合がある．
-      ライブラリ化するなら assert(0 <= k && k < size()) などに変えるとよい．
-
-    - merge(left, right) は単に2つの木を結合する操作であり，
-      一般の2つの二分探索木を自動で順序付きにマージするわけではない．
-      必ず left 側の全要素が right 側の全要素以下である状況で使う．
-
-    - new NODE(val) でノードを確保しているが，delete はしていない．
-      競技プログラミング用途では問題になりにくいが，
-      長時間動かすプログラムではメモリ管理に注意する．
-
-    
-    [使用例]
+[使用例]
     RBST<long long> st;
     st.insert(5);
     st.insert(2);
@@ -133,211 +94,212 @@
     st.upperBound(5);  // 3
 
     st.erase(5);       // 5 を1つ削除する
-
 */
 
-template<class VAL> struct RBST {
-    VAL SUM_UNITY = 0;                              // to be set
-
-    unsigned int randInt() {
-        static unsigned int tx = 123456789, ty = 362436069, tz = 521288629, tw = 88675123;
-        unsigned int tt = (tx ^ (tx << 11));
-        tx = ty; ty = tz; tz = tw;
-        return (tw = (tw ^ (tw >> 19)) ^ (tt ^ (tt >> 8)));
-    }
-
+template <class VAL>
+struct RBST {
     struct NODE {
         NODE *left, *right;
-        VAL val;                        // the value of the node
-        int size;                       // the size of the subtree 
-        VAL sum;                        // the value-sum of the subtree
+        VAL val;
+        int size;
+        VAL sum;
 
-        NODE() : val(SUM_UNITY), size(1), sum(SUM_UNITY) {
-            left = right = NULL;
-        }
+        NODE(const VAL& v) : left(nullptr), right(nullptr), val(v), size(1), sum(v) {}
 
-        NODE(VAL v) : val(v), size(1), sum(v) {
-            left = right = NULL;
-        }
-
-        /* additional update */
         inline void update() {
-
+            // 追加情報を持たせたい場合はここに書く
         }
 
-        /* additional lazy-propagation */
         inline void push() {
-
-            /* ex: reverse */
-            /*
-            if (this->rev) {
-            swap(this->left, this->right);
-            if (this->left) this->left->rev ^= true;
-            if (this->right) this->right->rev ^= true;
-            this->rev = false;
-            }
-            */
+            // 遅延伝播を入れたい場合はここに書く
         }
     };
 
-
-    ///////////////////////
-    // root
-    ///////////////////////
-
     NODE* root;
-    RBST() : root(NULL) { }
-    RBST(NODE* node) : root(node) { }
+    VAL SUM_UNITY;
 
+    RBST(VAL sum_unity = VAL()) : root(nullptr), SUM_UNITY(sum_unity) {}
+    RBST(NODE* node, VAL sum_unity = VAL()) : root(node), SUM_UNITY(sum_unity) {}
 
-    ///////////////////////
-    // basic operations
-    ///////////////////////
+    unsigned int randInt() {
+        static unsigned int tx = 123456789;
+        static unsigned int ty = 362436069;
+        static unsigned int tz = 521288629;
+        static unsigned int tw = 88675123;
 
-    /* size */
-    inline int size(NODE *node) {
-        return !node ? 0 : node->size;
-    }
-    inline int size() {
-        return this->size(this->root);
-    }
+        unsigned int tt = tx ^ (tx << 11);
+        tx = ty;
+        ty = tz;
+        tz = tw;
 
-    /* sum */
-    inline VAL sum(NODE *node) {
-        return !node ? SUM_UNITY : node->sum;
-    }
-    inline VAL sum() {
-        return this->sum(this->root);
+        return tw = (tw ^ (tw >> 19)) ^ (tt ^ (tt >> 8));
     }
 
-    /* update, push */
-    inline NODE* update(NODE *node) {
+    int size(NODE* node) const {
+        return node ? node->size : 0;
+    }
+
+    int size() const {
+        return size(root);
+    }
+
+    bool empty() const {
+        return size() == 0;
+    }
+
+    VAL sum(NODE* node) const {
+        return node ? node->sum : SUM_UNITY;
+    }
+
+    VAL sum() const {
+        return sum(root);
+    }
+
+    NODE* update(NODE* node) {
+        if (!node) return node;
+
         node->size = size(node->left) + size(node->right) + 1;
-        node->sum = sum(node->left) + sum(node->right) + node->val;
+        node->sum = sum(node->left) + node->val + sum(node->right);
+
         node->update();
         return node;
     }
 
-    inline void push(NODE *node) {
+    void push(NODE* node) {
         if (!node) return;
         node->push();
     }
 
-    /* lower_bound */
-    inline int lowerBound(NODE *node, VAL val) {
-        push(node);
+    int lowerBound(NODE* node, const VAL& val) {
         if (!node) return 0;
-        if (val <= node->val) return lowerBound(node->left, val);
-        else return size(node->left) + lowerBound(node->right, val) + 1;
-    }
-    inline int lowerBound(VAL val) {
-        return this->lowerBound(this->root, val);
+        push(node);
+
+        if (val <= node->val) {
+            return lowerBound(node->left, val);
+        } else {
+            return size(node->left) + 1 + lowerBound(node->right, val);
+        }
     }
 
-    /* upper_bound */
-    inline int upperBound(NODE *node, VAL val) {
-        push(node);
-        if (!node) return 0;
-        if (val >= node->val) return size(node->left) + upperBound(node->right, val) + 1;
-        else return upperBound(node->left, val);
-    }
-    inline int upperBound(VAL val) {
-        return this->upperBound(this->root, val);
+    int lowerBound(const VAL& val) {
+        return lowerBound(root, val);
     }
 
-    /* count */
-    inline int count(VAL val) {
+    int upperBound(NODE* node, const VAL& val) {
+        if (!node) return 0;
+        push(node);
+
+        if (val >= node->val) {
+            return size(node->left) + 1 + upperBound(node->right, val);
+        } else {
+            return upperBound(node->left, val);
+        }
+    }
+
+    int upperBound(const VAL& val) {
+        return upperBound(root, val);
+    }
+
+    int count(const VAL& val) {
         return upperBound(val) - lowerBound(val);
     }
 
-    /* get --- k: 0-index */
-    inline VAL get(NODE *node, int k) {
+    VAL get(NODE* node, int k) {
+        assert(node);
         push(node);
-        if (!node) return -1;
-        if (k == size(node->left)) return node->val;
-        if (k < size(node->left)) return get(node->left, k);
-        else return get(node->right, k - size(node->left) - 1);
+
+        int lsize = size(node->left);
+
+        if (k == lsize) return node->val;
+        if (k < lsize) return get(node->left, k);
+        return get(node->right, k - lsize - 1);
     }
-    inline VAL get(int k) {
-        return get(this->root, k);
+
+    VAL get(int k) {
+        assert(0 <= k && k < size());
+        return get(root, k);
     }
 
-
-    ///////////////////////
-    // merge-split
-    ///////////////////////
-
-    NODE* merge(NODE *left, NODE *right) {
+    NODE* merge(NODE* left, NODE* right) {
         push(left);
         push(right);
-        if (!left || !right) {
-            if (left) return left;
-            else return right;
-        }
-        if (randInt() % (left->size + right->size) < left->size) {
+
+        if (!left) return right;
+        if (!right) return left;
+
+        if (randInt() % (left->size + right->size) < (unsigned int)left->size) {
             left->right = merge(left->right, right);
             return update(left);
-        }
-        else {
+        } else {
             right->left = merge(left, right->left);
             return update(right);
         }
     }
-    void merge(RBST add) {
-        this->root = this->merge(this->root, add.root);
+
+    void merge(RBST& add) {
+        root = merge(root, add.root);
+        add.root = nullptr;
     }
-    pair<NODE*, NODE*> split(NODE* node, int k) { // [0, k), [k, n)
+
+    pair<NODE*, NODE*> split(NODE* node, int k) {
+        // [0,k), [k,n)
+        if (!node) return {nullptr, nullptr};
         push(node);
-        if (!node) return make_pair(node, node);
+
         if (k <= size(node->left)) {
-            pair<NODE*, NODE*> sub = split(node->left, k);
+            auto sub = split(node->left, k);
             node->left = sub.second;
-            return make_pair(sub.first, update(node));
-        }
-        else {
-            pair<NODE*, NODE*> sub = split(node->right, k - size(node->left) - 1);
+            return {sub.first, update(node)};
+        } else {
+            auto sub = split(node->right, k - size(node->left) - 1);
             node->right = sub.first;
-            return make_pair(update(node), sub.second);
+            return {update(node), sub.second};
         }
     }
+
     RBST split(int k) {
-        pair<NODE*, NODE*> sub = split(this->root, k);
-        this->root = sub.first;
-        return RBST(sub.second);
+        assert(0 <= k && k <= size());
+
+        auto sub = split(root, k);
+        root = sub.first;
+
+        return RBST(sub.second, SUM_UNITY);
     }
 
+    void insert(const VAL& val) {
+        int k = lowerBound(val);
+        auto sub = split(root, k);
 
-    ///////////////////////
-    // insert-erase
-    ///////////////////////
-
-    void insert(const VAL val) {
-        pair<NODE*, NODE*> sub = this->split(this->root, this->lowerBound(val));
-        this->root = this->merge(this->merge(sub.first, new NODE(val)), sub.second);
+        NODE* node = new NODE(val);
+        root = merge(merge(sub.first, node), sub.second);
     }
 
-    void erase(const VAL val) {
-        if (!this->count(val)) return;
-        pair<NODE*, NODE*> sub = this->split(this->root, this->lowerBound(val));
-        this->root = this->merge(sub.first, this->split(sub.second, 1).second);
+    bool erase(const VAL& val) {
+        if (count(val) == 0) return false;
+
+        int k = lowerBound(val);
+        auto sub1 = split(root, k);
+        auto sub2 = split(sub1.second, 1);
+
+        // sub2.first が削除されるノード
+        // delete はしない
+
+        root = merge(sub1.first, sub2.second);
+        return true;
     }
 
-
-    ///////////////////////
-    // debug
-    ///////////////////////
-
-    void print(NODE *node) {
+    void print(NODE* node) {
         if (!node) return;
         push(node);
+
         print(node->left);
         cout << node->val << " ";
         print(node->right);
     }
+
     void print() {
         cout << "{";
-        print(this->root);
-        cout << "}" << endl;
+        print(root);
+        cout << "}" << '\n';
     }
 };
-
