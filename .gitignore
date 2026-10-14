@@ -1,0 +1,16 @@
+# Local OS files and compiler/Python output
+.DS_Store
+__pycache__/
+*.py[cod]
+*.o
+*.out
+*.dSYM/
+/template/test
+/template/test2
+/template/test_dbg
+
+# Local authentication state
+.env
+.env.*
+*.cookies
+session_info.json

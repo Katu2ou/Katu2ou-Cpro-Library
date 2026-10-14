@@ -1,95 +1,178 @@
-//Mo's algorithm
 /*
-長さNの配列に対して、Q個の「1次元区間」クエリを合計でO((N+Q)sqrt(N))で処理する
-<条件>
-・処理する全クエリを先読みできる(オフラインクエリ)．
-・配列の各要素が不変．
-・区間[l,r)の結果から区間[l+1,r)，[l−1,r)，[l,r−1)，[l,r+1)の結果をある程度高速に計算できる．(最終的な計算量に影響する．)
-・区間[l,m)と区間[m,r)の結果をマージして[l,r)の結果を高速に計算することができない．(これができるならセグメント木などを使えば良い．)
+  <Mo's Algorithm / Mo 法>
+    - 区間クエリ [l,r) をオフラインで処理する
+    - クエリ順を並べ替え，現在区間の左右端を少しずつ動かすことで高速化する
+    - 「要素を1個追加・削除したときの状態更新」が高速な問題に有効
 
-つまり、l,rを1変えるだけなら高速にできるが、マージにO(N)かかってしまうようなものに対して
-うまく作用する。
+    [概要]
+        - 現在区間 [l,r) を保持し，各クエリ [ql,qr) まで l,r を1ずつ動かす
+        - 左右端の移動に応じて add_left，add_right，erase_left，erase_right を呼ぶ
+        - 左右で同じ処理を行う場合は add，erase の2関数だけでよい
+        - クエリは left をブロック分割し，同一ブロック内では right を snake order で並べる
+        - 初期状態は空区間 [0,0)
+
+    [実装/関数]
+        - Mo mo(N, width=-1)
+            長さ N の対象に対する Mo を作る
+            width<=0 ならブロック幅を自動決定する
+
+        - int add_query(int l,int r), int add(int l,int r)
+            クエリ [l,r) を登録し，クエリ番号を返す
+
+        - int size()
+            登録済みクエリ数を返す
+
+        - bool empty()
+            登録済みクエリが0個なら true
+
+        - void clear()
+            登録済みクエリをすべて削除する
+
+        - run(add,erase,query)
+            左右で追加・削除処理が同じ場合
+
+        - run(add_left,add_right,erase_left,erase_right,query)
+            左右で処理が異なる場合
+
+    [コールバック]
+        - add_left(i)
+            現在区間 [l,r) を [l-1,r) に拡張するときに呼ばれる
+            i は新しく追加された位置
+
+        - add_right(i)
+            現在区間 [l,r) を [l,r+1) に拡張するときに呼ばれる
+            i は新しく追加された位置
+
+        - erase_left(i)
+            現在区間 [l,r) を [l+1,r) に縮めるときに呼ばれる
+            i は削除された位置
+
+        - erase_right(i)
+            現在区間 [l,r) を [l,r-1) に縮めるときに呼ばれる
+            i は削除された位置
+
+        - 各更新関数は f(i) の代わりに f(l,r) と書くこともできる
+            このとき [l,r) は「操作後」の現在区間
+            変化した位置は
+                add_left   : l
+                add_right  : r-1
+                erase_left : l-1
+                erase_right: r
+
+        - query(q) または query(q,l,r)
+            q 番目のクエリに対する答えを現在状態から保存する
+            3引数版の [l,r) はそのクエリ区間
+
+    [計算時間]
+        - 1回の add / erase を O(T) とする
+        - ブロック幅を w とすると，端点移動回数は概ね
+              O(N^2/w + Qw)
+        - 自動設定 w ≈ N/sqrt(Q) では概ね
+              O(N sqrt(Q) T + Q log Q)
+        - Q≈N の典型的な場合は
+              O((N+Q)sqrt(N) T)
+          程度
+
+    [適用条件]
+        - すべてのクエリを事前に取得できるオフライン問題であること
+        - 対象となる列・要素がクエリ途中で変更されないこと
+        - 区間 [l,r) の状態から
+              [l-1,r), [l+1,r), [l,r-1), [l,r+1)
+          への更新を高速に行えること
+        - 特に，区間同士を高速にマージできない問題で有効なことが多い
+
+    [備考]
+        - add/erase が左右で可換なら run(add,erase,query) で十分
+        - 順序依存の状態では add_left/add_right/erase_left/erase_right を分ける
+        - run() 開始時には，外部で管理する状態も空区間 [0,0) に対応させておく
+        - query は原則として現在状態を変更しないこと
+        - クエリは内部で並べ替えられるが，query に渡る q は元の登録順の番号
+        - 空区間 [l,l) にも対応する
+
+    [使用例]
+        Mo mo(N);
+        for(int q=0;q<Q;q++) mo.add_query(L[q],R[q]);
+
+        auto add = [&](int i) { ... };
+        auto erase = [&](int i) { ... };
+        auto query = [&](int q) { ans[q]=...; };
+
+        mo.run(add,erase,query);
+
+        // 左右で処理が異なる場合
+        // mo.run(add_left,add_right,erase_left,erase_right,query);
 */
 
-// 以下のstructの部分はadd,erase,outのみ変更する
-/*
-<使用法>
-- 最初のクエリの区間[l,r)から順にadd(l, r) を呼び出す.
-- そのあと build(add, erase, out) を呼び出すと, すべてのクエリを処理する. 
- 問題に応じて実装すべきなのは add(i), erase(i), out(q) で, それぞれ 
- i番目の要素が加わる時,
- i番目の要素が消える時, 
- q番目のクエリを処理するとき
- に呼び出される.
-- 要素の追加や削除が非可換な場合があるが, その時は 
- build(add_left, add_right, erase_left, erase_right, out) を呼び出すこと.
-
- 
- // ex) 長さNの数列{ai}(ai<=10^6)が与えられた時、[lj,rj]に含まれる値の種類数を答える(1<=j<=Q)
-// int main() {
-//   int N;
-//   cin >> N;
-//   vector< int > A(N);
-//   for(auto &a: A) cin >> a;
-//   int Q;
-//   cin >> Q;
-//   Mo mo(N); //呼び出し
-//   for(int i = 0; i < Q; i++) {
-//     int a, b;
-//     cin >> a >> b;
-//     mo.add(a - 1, b); //クエリに対応する区間[k,l)(半閉区間!)をaddする
-//   }
-//   vector< int > cnt(1000001), ans(Q); //操作に関与する変数はmainで定義 moにも渡さなくて良い
-//   int sum = 0;
-
-//   auto add = [&](int i) { // i番目の要素が加わる時に、どのような操作をするか(cnt,sumは現在の状態として持っておく)
-//     if(cnt[A[i]]++ == 0) ++sum;
-//   };
-//   auto erase = [&](int i) { //i番目の要素が外される時に...
-//     if(--cnt[A[i]] == 0) --sum;
-//   };
-//   auto out = [&](int q) { //これがq番目のクエリの答えになる(ansとして出力)
-//     ans[q] = sum;
-//   };
-
-//   mo.build(add, erase, out); // buildで解く
-//   for(auto &p: ans) cout << p << "\n";
-// }
-*/
 struct Mo {
-  int n;
-  vector< pair< int, int > > lr;
+private:
+    int N, specified_width;
+    vector<pair<int,int>> qs;
 
-  explicit Mo(int n) : n(n) {}
-
-  void add(int l, int r) { /* [l, r) */
-    lr.emplace_back(l, r);
-  }
-
-  template< typename AL, typename AR, typename EL, typename ER, typename O >
-  void build(const AL &add_left, const AR &add_right, const EL &erase_left, const ER &erase_right, const O &out) {
-    int q = (int) lr.size();
-    int bs = n / min< int >(n, sqrt(q));
-    vector< int > ord(q);
-    iota(begin(ord), end(ord), 0);
-    sort(begin(ord), end(ord), [&](int a, int b) {
-      int ablock = lr[a].first / bs, bblock = lr[b].first / bs;
-      if(ablock != bblock) return ablock < bblock;
-      return (ablock & 1) ? lr[a].second > lr[b].second : lr[a].second < lr[b].second;
-    });
-    int l = 0, r = 0;
-    for(auto idx : ord) {
-      while(l > lr[idx].first) add_left(--l);
-      while(r < lr[idx].second) add_right(r++);
-      while(l < lr[idx].first) erase_left(l++);
-      while(r > lr[idx].second) erase_right(--r);
-      out(idx);
+    template<class F>
+    static void upd(F &f, int i, int l, int r) {
+        if constexpr (is_invocable_v<F,int,int>) f(l,r);
+        else {
+            static_assert(is_invocable_v<F,int>);
+            f(i);
+        }
     }
-  }
 
-  template< typename A, typename E, typename O >
-  void build(const A &add, const E &erase, const O &out) {
-    build(add, add, erase, erase, out);
-  }
+    template<class F>
+    static void ask(F &f, int q, int l, int r) {
+        if constexpr (is_invocable_v<F,int,int,int>) f(q,l,r);
+        else {
+            static_assert(is_invocable_v<F,int>);
+            f(q);
+        }
+    }
+
+public:
+    explicit Mo(int N, int width=-1): N(N), specified_width(width) {}
+
+    int add_query(int l, int r) {
+        assert(0<=l && l<=r && r<=N);
+        qs.emplace_back(l,r);
+        return (int)qs.size()-1;
+    }
+
+    int add(int l, int r) { return add_query(l,r); }
+    int size() const { return (int)qs.size(); }
+    bool empty() const { return qs.empty(); }
+    void clear() { qs.clear(); }
+
+    template<class AL, class AR, class EL, class ER, class Q>
+    void run(AL add_left, AR add_right, EL erase_left, ER erase_right, Q query) {
+        int M=qs.size();
+        if(!M) return;
+
+        int w = specified_width>0 ? specified_width
+                                  : max(1, N/max(1,(int)sqrt(M)));
+
+        vector<int> ord(M);
+        iota(ord.begin(),ord.end(),0);
+
+        sort(ord.begin(),ord.end(),[&](int a,int b){
+            int ba=qs[a].first/w, bb=qs[b].first/w;
+            if(ba!=bb) return ba<bb;
+            return (ba&1) ? qs[a].second>qs[b].second
+                          : qs[a].second<qs[b].second;
+        });
+
+        int l=0,r=0;
+        for(int q:ord){
+            auto [ql,qr]=qs[q];
+
+            while(l>ql){ --l; upd(add_left,l,l,r); }
+            while(r<qr){ int i=r++; upd(add_right,i,l,r); }
+            while(l<ql){ int i=l++; upd(erase_left,i,l,r); }
+            while(r>qr){ int i=--r; upd(erase_right,i,l,r); }
+
+            ask(query,q,l,r);
+        }
+    }
+
+    template<class A, class E, class Q>
+    void run(A add, E erase, Q query) {
+        run(add,add,erase,erase,query);
+    }
 };
-

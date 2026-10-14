@@ -1,0 +1,86 @@
+<心得>
+    - 考察と実装方法を十分詰めてから実装すること！！！！！
+    - 提出する前に必ずサンプルを確認(特にバグ取りをした後の無駄なcout)
+
+- ペナルティを出した時に確認するべきこと
+    (WAの割合が多い時(半分以上とか))
+    - オーバーフロー (llでも式のどこかで10^18を超えているかも 全てをllにしてかつ10^18を超えてそうなところを修正する)
+        特にpow(n,m)のnにllではなくint, mintではなくll,int...
+    - 必要条件の確認抜け (A[n-1]!=n を確認するべきなのにし忘れているなど)
+    - 添字・<<<<変数間違え>>>>(nとmを逆にするなど... REが出ない場合もある)
+    - 値の更新忘れ
+    - 考察ミス
+
+    (WAの割合が少ない時(数個)特に) 
+    - オーバーフロー (llでも式のどこかで10^18を超えているかも 全てをllにしてかつ10^18を超えてそうなところを修正する)
+    - コーナーケース 
+    - 必要条件の確認抜け (A[n-1]!=n を確認するべきなのにし忘れているなど)
+    - 添字・変数間違え(nとmを逆にするなど... REが出ない場合もある)
+
+    (REがある時)
+    - 添字・変数間違え(nとmを逆にするなど... REが出ない場合もある)
+    - 範囲外参照 (a[i]ではなくa.at(i)とすれば範囲外参照をした時にREを出す)
+    
+- TLEをした時に確認するべきこと
+    1. (modintなどで)割り算を多く使っていないか(modintの割り算はとても遅い！ 逆元を前計算
+    できるならしておく)
+    2. 再帰メモができていない
+    3. セグ木上の二分探索など，計算量を落とせるところはあるか
+
+<演算子の優先順位>  (上の方が高い)
+
+2. 配列の下付き文字[] / 関数呼び出し() / 後置イン(デ)クリメント ++ --
+3. 前置イン(デ)クリメント ++ -- / 1の補数~ / ! / 単項+ - / アドレス& 
+5. */% (演算)
+6. +- (演算)
+7. << >> (シフト)
+8. < > <= >=
+9. == !=
+10. & (bit)
+11. ^ (bit)
+12. | (bit)
+13. &&
+14. ||
+15. =(代入) *= /= %= ...
+
+<提出>
+- ラムダ式(再帰)関数 : ARC175D https://atcoder.jp/contests/arc175/submissions/58377650
+- hypot(=sqrt(x^x+y^y)) : ABC375B https://atcoder.jp/contests/abc375/submissions/58733894
+- ラムダ式比較関数 + priority_queue : AGC023F https://atcoder.jp/contests/agc023/submissions/59018859
+- struct + priority_queue : AGC023F https://atcoder.jp/contests/agc023/submissions/59019016
+- ラムダ式比較関数 + sort : https://atcoder.jp/contests/agc064/submissions/61077163
+- tupleの基本操作 : ABC382F https://atcoder.jp/contests/abc382/submissions/60335211
+- 謎のRE(munmap_chunk(): invalid pointer) : ABC382D  https://atcoder.jp/contests/abc382/submissions/60347996
+    - 結局これは添字ミスだったはず
+- 
+
+<理解していない 実装がない>
+- 双対セグ木
+- HL decomposition
+- Euler-Tour
+- Wavelet-matrix
+- Min25-篩
+- 最小費用流のテク
+- slope-trick
+- 
+
+
+<埋め込み関数>
+    - 立っているビットの個数を数える
+        __builtin_popcount(int x) (unsigned intでもよい) 
+        __builtin_popcountll(long long x)
+    - 先頭に続く0の個数を数える (最大桁は(桁数-1)-(この値)で求められる)
+        __builtin_clz(int x) (32bit)
+        __builtin_clzll(long long x) (64bit)
+    - 末尾から続く0の個数を数える
+        __builtin_ctz(int x)
+        __builtin_ctzll(long long x)
+    - 立っているビット数の偶奇を返す
+        __builtin_parity
+        __builtin_parityll
+    - 立っているビット数を数えて返す
+        __builtin_popcount
+        __builtin_popcountll
+
+<関数>
+    - std::bit_width(n) : n のビット長(0->0, 1->1)

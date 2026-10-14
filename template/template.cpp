@@ -1,3 +1,7 @@
+// Library references:
+// https://github.com/Katu2ou/Katu2ou-Cpro-Library
+// https://github.com/Katu2ou/katu2ou-icpc-regional
+
 #include <bits/stdc++.h>
 using namespace std;
 

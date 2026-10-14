@@ -1,0 +1,10 @@
+-- [無向グラフが与えられたとき，辺の向きを適切に決めて強連結にする] --
+(ARC111D)
+    - ある点からDFS(BFSだとうまく行かなそう)をして訪れる順の方向に辺を張ることを繰り返す
+    - (https://atcoder.jp/contests/arc111/submissions/56215148)
+
+
+
+-- [辺を追加していって二部グラフ性が保たれているか] --
+    - 
+    - https://atcoder.jp/contests/arc165/editorial/7137 を参照

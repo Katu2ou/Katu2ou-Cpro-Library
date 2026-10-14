@@ -1,0 +1,12 @@
+
+- 隣接頂点のコスト和 / 辺のつけ外し / コストの一点変更(オンライン) : 分割統治(deg(v)>m でheavy とlight に分ける)
+    https://yukicoder.me/problems/no/3025
+
+- A_l, ... A_r のうちx以下であるものの総和(オンライン) : 
+    https://atcoder.jp/contests/abc339/tasks/abc339_g
+
+
+
+
+<Stern–Brocot tree> (https://miscalc.hatenablog.com/entry/2023/12/22/213007)
+    - 

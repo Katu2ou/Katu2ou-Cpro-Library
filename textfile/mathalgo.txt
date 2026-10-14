@@ -1,0 +1,25 @@
+<素数>
+    - 素数判定 (ミラーラビン/AKS)
+    - 高速な素因数分解 (rho-法/p-1法/楕円曲線法(ECM)/一般数体篩法)
+    - 素数の列挙 (篩/線形篩)
+    - prime counting (Lucy DPなど)
+
+<素体上の計算>
+    - 平方剰余 (Tonelli-shanks/cipolla's algorithm)
+    - 離散対数問題 (BSLS)
+    - 二項係数modp (Lucas)
+    - N! modp (多点評価)
+    - 除算を用いない高速な計算(モンゴメリ乗算)
+
+<gcd,lcm>
+    - ectgcd
+    - Binary GCD(互除法より高速)
+
+<乗法的関数>
+    - 乗法的関数のprefix sum
+    - 
+
+<群>
+    - コーシーフロベニウスの定理
+    - ポリアの数え上げ定理
+    - 群であるかの判定をO(n^2)でするやつ

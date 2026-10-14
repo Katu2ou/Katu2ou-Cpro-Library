@@ -1,0 +1,122 @@
+<ABC212>
+    A: 条件分岐
+
+    B: 条件処理
+
+    C: 二分探索,尺取り法など
+        https://atcoder.jp/contests/abc212/submissions/24648529
+        - 長さn,mの配列a,bに対して，a,bのn+m要素をソートした時に，隣り合う要素が
+        異なる配列由来であるかを判定する
+        - iota, 条件指定sortの書き方, 2つが異なる要素に属すことの簡潔な条件式
+        https://atcoder.jp/contests/abc212/submissions/24648529
+        - にぶたん解法 
+        - 様々なマクロ・iteratorに関する*prev,lower_bound
+
+    D: 要素加算と最小要素取り出し
+        https://atcoder.jp/contests/abc212/submissions/24650665
+        - priority(昇順)の代わりにmultisetを使っている
+
+    E: 補グラフが与えられた時の巡回パスの個数
+
+    F: グラフ上のダブリング/ シュミレーション高速化(UFで要素を同一視して高速化する)
+        - (移動の高速化,移動先が一意に定まる -> ダブリング!!)
+        - lower_bound(all(v),{a,i})のような書き方はできない(pair型を{a,i}ではなく
+        make_pair(a,i)としなければならない)
+        https://atcoder.jp/contests/abc212/submissions/24658153
+        - ダブリングの書き方(辺に対して，その2^i回後に移る辺を記録する)
+        - 各辺に対して2^(i-1)回後に移る辺がわかっていれば,2^i回後に移る辺は
+            すぐに求められる
+
+    G: 整数 / 原始根をとる / an=b(mod m)なるnが存在する条件 
+        (可変長ループを書きたい! -> https://qiita.com/EvtHorizonCoder/items/c7293b125d7697b8dad3)
+
+    H: xor畳み込み(添字条件を+からxorにする) (高速Hadamard変換) / 畳み込みを使った数え上げ手法
+        - 畳み込みの際は定数倍の処理を忘れずに
+        - 畳み込みは変換先での各点積
+        - 畳み込みでの線型性
+        - and,or 畳み込みはこの類似 (高速ゼータ変換など) xorでは変換行列が冪等だがand,orはそうではない
+        https://qiita.com/izu_nori/items/7810fc2bc0423c8d407f
+
+
+<ABC213>
+    A: for xor (&,|,^といったbit演算子は==や>>より優先順位が低い!!)
+
+    B: ペアソート or 条件付きソート
+
+    C: 座標圧縮
+        https://atcoder.jp/contests/abc213/submissions/24857261
+        - v.erase,v.unique の使い方
+        - 元の配列をsort->erase(unique)で重複要素を除き，lower_bound-beginで位置を求めている
+
+    D: 木上のDFS
+        - 「行ける頂点がなければ初めてその頂点に辿り着いた時の直前のマスに戻る」は木の時はdfsに他ならない
+        - この問題は木のEuler Tourを求める問題になっている
+        https://atcoder.jp/contests/abc213/submissions/24859817
+        - function型dfsの書き方 function<void(int, int)>dfs=[&](int id, int fr)
+    
+    E: グリッド移動のコスト最小化(01BFS)
+        - ある点からの別の点への1回の移動のコストが0or1 -> 01BFSが使える
+        - コスト比較は必要!(現在での最小コスト > 今更新するコスト かの判定)
+        https://atcoder.jp/contests/abc213/submissions/24864759
+        - よく出てくる if(nx<0 || ny < 0 || ....) をfunction型を用いて判定している
+
+    F : LCP array
+        - suffix(n個の接尾辞)のcommon prefix(前から一致している部分) を求める-> LCP array
+        - suffix array: 文字列Sのn+1個の接尾辞(のindex)をソートしたもの
+            (文字の種類を定数個としてO(|S|)でできる)
+        - 辞書順で隣接するsuffixの類似度(先頭から一致する文字数)を順に並べたものを
+            LCP arrayという．(Suffix ArrayがあればO(|S|)で計算できる)
+        - 任意の二つのsuffixの類似度は，対応するLCP array部分列のrange min として計算できる
+        - 部分問題「g(i,j)=min(a_i,...,a_j)とするとき，
+            k=1,2,...,nに対してg(1,k)+...+g(n,k)を求める」
+        - LCP arrayを使うと相異なる部分文字列の個数が数えられる(https://atcoder.jp/contests/practice2/tasks/practice2_i)
+
+    G : 辺削除により2点の連結性が保たれるような削除の仕方の数え上げ
+        - 3^N DP(0<i,j<2^n, i\subset jなるi,jの数え上げ 部分集合の列挙) 
+        - 求める値C(k) = \sum (ある集合の連結部分グラフの個数)*(補集合の部分グラフの個数)
+            と言い換えられる．
+        - (ある頂点集合Sの連結部分グラフの個数) -> 除原理を用いてO(3^n)で求まる
+            (導出の式を把握しておく: https://atcoder.jp/contests/abc213/editorial/2392)
+            (高度なアルゴリズムではO(n^2*2^n)でいける)
+        - (ある頂点集合の部分グラフの個数)　->これの個数は両端が集合に含まれている
+            辺の個数を求めれば良いだけなので簡単
+        - 集合冪級数として考えることもできる https://maspypy.com/%e9%9b%86%e5%90%88%e3%81%b9%e3%81%8d%e7%b4%9a%e6%95%b0%e9%96%a2%e9%80%a3-4-%e5%95%8f%e9%a1%8c%e4%be%8b
+
+    H : 分割統治FFT(オンラインFFT)
+        - DPテーブルを埋めるのにDPテーブルが必要になる-> オンラインDP
+        - オンライン DP のうちいくつかの良い性質を持つケースに関しては、愚直な解法から
+            計算量を改善できることが知られている
+
+<ABC358>
+    A : 文字列一致判定 (AtCoderのCは大文字!!)
+
+    B : 時間軸シュミレーション
+
+    C : bit全探索
+
+    D : 小さい方から貪欲 or 尺取り法 or 二分探索?
+
+    E : 数え上げ
+        - S = {0,1,...,t} の元を1個以上k個以下一列に並べる方法(各種個数制限付き)
+        - FPSはオーバーキル 普通に「i文字目までで並んでいる個数j」のdpを遷移を工夫すればok
+
+    F : 実装
+
+    G : グリッド上でマスに正点数がある場合の利得最大化(H,Wが小さい) 貪欲+DFS
+        - HとWが小さいので，最初のH*W回までは全探索して，あとは各マスを踏み続ける
+        - まだ到達できない頂点は0ではなく-infなどとおく！！！ (ナップザックと同じ理屈)
+
+<ABC364>
+    A : 
+
+    B : 
+    
+    C : 
+
+    D : 
+
+    E : 
+
+    F : 
+
+    G : 最小シュナイパー木
