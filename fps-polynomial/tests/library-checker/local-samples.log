@@ -1,0 +1,131 @@
+COMPILED inv_sparse
+COMPILED inv
+COMPILED log_sparse
+COMPILED log
+COMPILED exp_sparse
+COMPILED exp
+COMPILED pow_sparse
+COMPILED pow
+COMPILED sqrt_sparse
+COMPILED sqrt
+COMPILED composition
+COMPILED compositional_inverse
+COMPILED composition_large
+COMPILED convolution_998244353
+COMPILED compositional_inverse_large
+COMPILED convolution_1000000007
+COMPILED division
+COMPILED polynomial_inverse
+COMPILED multipoint
+COMPILED interpolation
+COMPILED sampling_shift
+COMPILED bernoulli
+COMPILED prefix_exclusive
+COMPILED mod_sqrt
+COMPILED prefix_inclusive
+COMPILED relaxed
+COMPILED newton
+COMPILED inv_of_formal_power_series-correct (cached)
+COMPILED inv_of_formal_power_series-checker (cached)
+COMPILED inv_of_formal_power_series_sparse-correct (cached)
+COMPILED inv_of_formal_power_series_sparse-checker (cached)
+COMPILED log_of_formal_power_series-correct (cached)
+COMPILED log_of_formal_power_series-checker (cached)
+COMPILED log_of_formal_power_series_sparse-correct (cached)
+COMPILED log_of_formal_power_series_sparse-checker (cached)
+COMPILED exp_of_formal_power_series-correct (cached)
+COMPILED exp_of_formal_power_series-checker (cached)
+COMPILED exp_of_formal_power_series_sparse-correct (cached)
+COMPILED exp_of_formal_power_series_sparse-checker (cached)
+COMPILED pow_of_formal_power_series-correct (cached)
+COMPILED pow_of_formal_power_series-checker (cached)
+COMPILED pow_of_formal_power_series_sparse-correct (cached)
+COMPILED pow_of_formal_power_series_sparse-checker (cached)
+COMPILED sqrt_of_formal_power_series-correct (cached)
+COMPILED sqrt_of_formal_power_series-checker (cached)
+COMPILED sqrt_of_formal_power_series_sparse-correct (cached)
+COMPILED sqrt_of_formal_power_series_sparse-checker (cached)
+COMPILED composition_of_formal_power_series-correct (cached)
+COMPILED composition_of_formal_power_series-checker (cached)
+COMPILED compositional_inverse_of_formal_power_series-correct (cached)
+COMPILED compositional_inverse_of_formal_power_series-checker (cached)
+COMPILED composition_of_formal_power_series_large-correct (cached)
+COMPILED composition_of_formal_power_series_large-checker (cached)
+COMPILED compositional_inverse_of_formal_power_series_large-correct (cached)
+COMPILED compositional_inverse_of_formal_power_series_large-checker (cached)
+COMPILED convolution_mod-correct (cached)
+COMPILED convolution_mod-checker (cached)
+COMPILED convolution_mod_1000000007-correct (cached)
+COMPILED convolution_mod_1000000007-checker (cached)
+COMPILED division_of_polynomials-correct (cached)
+COMPILED division_of_polynomials-checker (cached)
+COMPILED inv_of_polynomials-correct (cached)
+COMPILED inv_of_polynomials-checker (cached)
+COMPILED multipoint_evaluation-correct (cached)
+COMPILED multipoint_evaluation-checker (cached)
+COMPILED polynomial_interpolation-correct (cached)
+COMPILED polynomial_interpolation-checker (cached)
+COMPILED shift_of_sampling_points_of_polynomial-correct (cached)
+COMPILED shift_of_sampling_points_of_polynomial-checker (cached)
+COMPILED bernoulli_number-correct (cached)
+COMPILED bernoulli_number-checker (cached)
+COMPILED prefix_sum_of_polynomial-correct (cached)
+COMPILED prefix_sum_of_polynomial-checker (cached)
+COMPILED sqrt_mod-correct (cached)
+COMPILED sqrt_mod-checker (cached)
+COMPILED pow_unit
+inv example_00.in PASS 0.152s
+inv_sparse example_00.in PASS 0.133s
+inv_sparse example_01.in PASS 0.013s
+log example_00.in PASS 0.136s
+log_sparse example_00.in PASS 0.134s
+log_sparse example_01.in PASS 0.013s
+exp example_00.in PASS 0.136s
+exp_sparse example_00.in PASS 0.132s
+exp_sparse example_01.in PASS 0.013s
+exp_sparse example_02.in PASS 0.012s
+pow example_00.in PASS 0.136s
+pow example_01.in PASS 0.013s
+pow example_02.in PASS 0.012s
+pow_sparse example_00.in PASS 0.130s
+pow_sparse example_01.in PASS 0.012s
+pow_sparse example_02.in PASS 0.013s
+pow_sparse example_03.in PASS 0.013s
+sqrt example_00.in PASS 0.141s
+sqrt example_01.in PASS 0.012s
+sqrt_sparse example_00.in PASS 0.133s
+sqrt_sparse example_01.in PASS 0.012s
+sqrt_sparse example_02.in PASS 0.012s
+composition example_00.in PASS 0.137s
+compositional_inverse example_00.in PASS 0.135s
+composition_large example_00.in PASS 0.151s
+compositional_inverse_large example_00.in PASS 0.142s
+convolution_998244353 example_00.in PASS 0.135s
+convolution_998244353 example_01.in PASS 0.012s
+convolution_1000000007 example_00.in PASS 0.133s
+convolution_1000000007 example_01.in PASS 0.012s
+division example_00.in PASS 0.134s
+division example_01.in PASS 0.012s
+division example_02.in PASS 0.012s
+division example_03.in PASS 0.012s
+polynomial_inverse example_00.in PASS 0.152s
+polynomial_inverse example_01.in PASS 0.012s
+polynomial_inverse example_02.in PASS 0.012s
+multipoint example_00.in PASS 0.134s
+multipoint example_01.in PASS 0.012s
+interpolation example_00.in PASS 0.163s
+interpolation example_01.in PASS 0.013s
+sampling_shift example_00.in PASS 0.135s
+sampling_shift example_01.in PASS 0.013s
+bernoulli example_00.in PASS 0.186s
+prefix_exclusive example_00.in PASS 0.134s
+prefix_exclusive example_01.in PASS 0.014s
+prefix_inclusive example_00.in PASS 0.148s
+prefix_inclusive example_01.in PASS 0.013s
+mod_sqrt example_00.in PASS 0.140s
+relaxed example_00.in PASS 0.148s
+relaxed example_01.in PASS 0.013s
+newton example_00.in PASS 0.142s
+pow_unit example_00.in PASS 0.137s
+pow_unit example_01.in PASS 0.013s
+PASS 28 adapters, 54 official cases.

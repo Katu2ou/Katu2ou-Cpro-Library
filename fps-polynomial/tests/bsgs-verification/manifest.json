@@ -1,0 +1,40 @@
+[
+  {
+    "key": "polynomial_factorial",
+    "problem": "factorial",
+    "lang": "cpp17",
+    "functions": [
+      "polynomial_product_bsgs",
+      "polynomial_matrix_product_bsgs"
+    ],
+    "source": "submissions/polynomial_factorial.cpp",
+    "source_sha256": "fbccddbfa8a3cc80d8ce4a76989f92eff401cb33c11afe8259cc7a2c32240cff",
+    "libraries": {
+      "polynomial-matrix-product.cpp": "680ccfa7a4951ca5b0f46348fe68c9456682d8fe0c11ad9e34f5ffdeb631a5d3",
+      "sampling-point-shift.cpp": "e75abb35211855cd6c8332c9aba4b1a1ffec416bef71ceb0689c0e957f2e4b11",
+      "formal-power-series.cpp": "c419994faad2d01f965bad1e57c8521fea84580e50ca656375eb505484592c84",
+      "multipoint-evaluation.cpp": "1dfc38d3e3e6b9bef3fd7b2cfbbae4bf49687f6e80a856f7fbd8e7dbfca15d12",
+      "fps-sparse.cpp": "34749055a0f51a8ee23532e2bd745dd33eec4a9b259240cc68eea858fcdf6f39",
+      "fps-sqrt.cpp": "fa120551149a2fc7af467ded0a03c06677378e604b24b546c932852313cb630f"
+    }
+  },
+  {
+    "key": "p_recursive_factorial",
+    "problem": "factorial",
+    "lang": "cpp17",
+    "functions": [
+      "p_recursive_nth",
+      "polynomial_matrix_product_bsgs"
+    ],
+    "source": "submissions/p_recursive_factorial.cpp",
+    "source_sha256": "515cb0d984cdfaeab10e2f067335ec8fbd22d1a757eeb7fdc53a71643c04540b",
+    "libraries": {
+      "polynomial-matrix-product.cpp": "680ccfa7a4951ca5b0f46348fe68c9456682d8fe0c11ad9e34f5ffdeb631a5d3",
+      "sampling-point-shift.cpp": "e75abb35211855cd6c8332c9aba4b1a1ffec416bef71ceb0689c0e957f2e4b11",
+      "formal-power-series.cpp": "c419994faad2d01f965bad1e57c8521fea84580e50ca656375eb505484592c84",
+      "multipoint-evaluation.cpp": "1dfc38d3e3e6b9bef3fd7b2cfbbae4bf49687f6e80a856f7fbd8e7dbfca15d12",
+      "fps-sparse.cpp": "34749055a0f51a8ee23532e2bd745dd33eec4a9b259240cc68eea858fcdf6f39",
+      "fps-sqrt.cpp": "fa120551149a2fc7af467ded0a03c06677378e604b24b546c932852313cb630f"
+    }
+  }
+]

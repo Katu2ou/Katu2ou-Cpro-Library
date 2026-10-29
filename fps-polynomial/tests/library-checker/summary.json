@@ -1,0 +1,14 @@
+{
+  "checked_at": "2026-10-29T16:29:05+09:00",
+  "submissions": 28,
+  "problems": 24,
+  "verdicts": {
+    "AC": 28
+  },
+  "case_verdicts": {
+    "AC": 806
+  },
+  "official_samples": 54,
+  "source_verified": true,
+  "current_libraries_verified": true
+}

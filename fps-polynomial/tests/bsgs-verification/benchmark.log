@@ -1,0 +1,7 @@
+BSGS n=1000000 answer=829729473 seconds=0.004169
+sparse n=1000000 answer=829729473 seconds=0.030811
+BSGS n=10000000 answer=671926596 seconds=0.015209
+sparse n=10000000 answer=671926596 seconds=0.360213
+binomial n=100000000 answer=1 seconds=0.030817
+binomial n=998244351 answer=998244352 seconds=0.089077
+binomial n=998244352 answer=1 seconds=0.060800

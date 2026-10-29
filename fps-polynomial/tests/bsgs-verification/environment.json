@@ -1,0 +1,10 @@
+{
+  "checked_at": "2026-10-29T23:54:52.331782+09:00",
+  "platform": "macOS-15.6.1-arm64-arm-64bit",
+  "architecture": "arm64",
+  "gcc": "g++-14 (Homebrew GCC 14.2.0) 14.2.0",
+  "clang": "Apple clang version 17.0.0 (clang-1700.0.13.5)",
+  "gcc_flags": "-std=c++17 -O2",
+  "sanitizer_flags": "-std=c++17 -O1 -g -fsanitize=address,undefined -fno-omit-frame-pointer",
+  "upstream_commit": "73876f1cbcf082d2b22722924b924d3d65a2f00e"
+}

@@ -1,0 +1,411 @@
+[
+  {
+    "key": "inv",
+    "problem": "inv_of_formal_power_series",
+    "lang": "cpp17",
+    "functions": [
+      "f.inv(n)"
+    ],
+    "source": "submissions/inv.cpp",
+    "source_sha256": "f3bf165d79e4b6bc2b2215d0d661cb7a2ca96ee9233b7e33a05a4dc82124b148",
+    "libraries": {
+      "formal-power-series.cpp": "c419994faad2d01f965bad1e57c8521fea84580e50ca656375eb505484592c84"
+    }
+  },
+  {
+    "key": "inv_sparse",
+    "problem": "inv_of_formal_power_series_sparse",
+    "lang": "cpp17",
+    "functions": [
+      "fps_inv_sparse(f,n)"
+    ],
+    "source": "submissions/inv_sparse.cpp",
+    "source_sha256": "19f69e19ae95bc2826cc9dac98c27aa9615dacef641790765222e4d6101faf4a",
+    "libraries": {
+      "fps-sparse.cpp": "34749055a0f51a8ee23532e2bd745dd33eec4a9b259240cc68eea858fcdf6f39",
+      "fps-sqrt.cpp": "fa120551149a2fc7af467ded0a03c06677378e604b24b546c932852313cb630f",
+      "formal-power-series.cpp": "c419994faad2d01f965bad1e57c8521fea84580e50ca656375eb505484592c84"
+    }
+  },
+  {
+    "key": "log",
+    "problem": "log_of_formal_power_series",
+    "lang": "cpp17",
+    "functions": [
+      "f.log(n)"
+    ],
+    "source": "submissions/log.cpp",
+    "source_sha256": "77220538503eb2dec4bbb32da9c1a55a5c2faf099c8ab16d977fae5e7ff9ac5f",
+    "libraries": {
+      "formal-power-series.cpp": "c419994faad2d01f965bad1e57c8521fea84580e50ca656375eb505484592c84"
+    }
+  },
+  {
+    "key": "log_sparse",
+    "problem": "log_of_formal_power_series_sparse",
+    "lang": "cpp17",
+    "functions": [
+      "fps_log_sparse(f,n)"
+    ],
+    "source": "submissions/log_sparse.cpp",
+    "source_sha256": "3d4785bdd42975c841d6dfa39fe76f026ff94f1eac5b37a54940cd6a38482f32",
+    "libraries": {
+      "fps-sparse.cpp": "34749055a0f51a8ee23532e2bd745dd33eec4a9b259240cc68eea858fcdf6f39",
+      "fps-sqrt.cpp": "fa120551149a2fc7af467ded0a03c06677378e604b24b546c932852313cb630f",
+      "formal-power-series.cpp": "c419994faad2d01f965bad1e57c8521fea84580e50ca656375eb505484592c84"
+    }
+  },
+  {
+    "key": "exp",
+    "problem": "exp_of_formal_power_series",
+    "lang": "cpp17",
+    "functions": [
+      "f.exp(n)"
+    ],
+    "source": "submissions/exp.cpp",
+    "source_sha256": "ddd4c7a9032ae2acd0814a1eedd2aa4fb305b4018a447c734f5a624fb9f12f35",
+    "libraries": {
+      "formal-power-series.cpp": "c419994faad2d01f965bad1e57c8521fea84580e50ca656375eb505484592c84"
+    }
+  },
+  {
+    "key": "exp_sparse",
+    "problem": "exp_of_formal_power_series_sparse",
+    "lang": "cpp17",
+    "functions": [
+      "fps_exp_sparse(f,n)"
+    ],
+    "source": "submissions/exp_sparse.cpp",
+    "source_sha256": "d87f8667058677582ce089d8d218015a4eee7c81d3b842708a599e9d8bd59a96",
+    "libraries": {
+      "fps-sparse.cpp": "34749055a0f51a8ee23532e2bd745dd33eec4a9b259240cc68eea858fcdf6f39",
+      "fps-sqrt.cpp": "fa120551149a2fc7af467ded0a03c06677378e604b24b546c932852313cb630f",
+      "formal-power-series.cpp": "c419994faad2d01f965bad1e57c8521fea84580e50ca656375eb505484592c84"
+    }
+  },
+  {
+    "key": "pow",
+    "problem": "pow_of_formal_power_series",
+    "lang": "cpp17",
+    "functions": [
+      "f.pow(k,n)"
+    ],
+    "source": "submissions/pow.cpp",
+    "source_sha256": "e0e31c76ff8d70dc7c8ffca39cfc198225ee2fc7126e2b233249569e55170f11",
+    "libraries": {
+      "formal-power-series.cpp": "c419994faad2d01f965bad1e57c8521fea84580e50ca656375eb505484592c84"
+    }
+  },
+  {
+    "key": "pow_sparse",
+    "problem": "pow_of_formal_power_series_sparse",
+    "lang": "cpp17",
+    "functions": [
+      "fps_pow_sparse(f,exponent,n)"
+    ],
+    "source": "submissions/pow_sparse.cpp",
+    "source_sha256": "9981602965feb5258d8ed8c70b43dd26022e575d9d4f8b05f2231810dcad3a21",
+    "libraries": {
+      "fps-sparse.cpp": "34749055a0f51a8ee23532e2bd745dd33eec4a9b259240cc68eea858fcdf6f39",
+      "fps-sqrt.cpp": "fa120551149a2fc7af467ded0a03c06677378e604b24b546c932852313cb630f",
+      "formal-power-series.cpp": "c419994faad2d01f965bad1e57c8521fea84580e50ca656375eb505484592c84"
+    }
+  },
+  {
+    "key": "sqrt",
+    "problem": "sqrt_of_formal_power_series",
+    "lang": "cpp17",
+    "functions": [
+      "fps_sqrt(f,n)"
+    ],
+    "source": "submissions/sqrt.cpp",
+    "source_sha256": "b436bfc336fd2de99705ad08b9472ba244f0a31196e0a0782836c662aa08d831",
+    "libraries": {
+      "fps-sqrt.cpp": "fa120551149a2fc7af467ded0a03c06677378e604b24b546c932852313cb630f",
+      "formal-power-series.cpp": "c419994faad2d01f965bad1e57c8521fea84580e50ca656375eb505484592c84"
+    }
+  },
+  {
+    "key": "sqrt_sparse",
+    "problem": "sqrt_of_formal_power_series_sparse",
+    "lang": "cpp17",
+    "functions": [
+      "fps_sqrt_sparse(f,n)"
+    ],
+    "source": "submissions/sqrt_sparse.cpp",
+    "source_sha256": "a9946f7c2318724639b13b96c6ead00b2737dace871c262de33e49265403167a",
+    "libraries": {
+      "fps-sparse.cpp": "34749055a0f51a8ee23532e2bd745dd33eec4a9b259240cc68eea858fcdf6f39",
+      "fps-sqrt.cpp": "fa120551149a2fc7af467ded0a03c06677378e604b24b546c932852313cb630f",
+      "formal-power-series.cpp": "c419994faad2d01f965bad1e57c8521fea84580e50ca656375eb505484592c84"
+    }
+  },
+  {
+    "key": "composition",
+    "problem": "composition_of_formal_power_series",
+    "lang": "cpp17",
+    "functions": [
+      "fps_compose"
+    ],
+    "source": "submissions/composition.cpp",
+    "source_sha256": "d644e44c97044ac4b22371638430b4baa918e80a8cd89711d265dcdd718b5e54",
+    "libraries": {
+      "fps-composition.cpp": "7febf7325b9c090d33f7cde54ddc6c4f252189d843dc2461f9188bc45d045dd9",
+      "formal-power-series.cpp": "c419994faad2d01f965bad1e57c8521fea84580e50ca656375eb505484592c84"
+    }
+  },
+  {
+    "key": "compositional_inverse",
+    "problem": "compositional_inverse_of_formal_power_series",
+    "lang": "cpp17",
+    "functions": [
+      "fps_compositional_inverse",
+      "fps_power_projection"
+    ],
+    "source": "submissions/compositional_inverse.cpp",
+    "source_sha256": "af13d9a634518d527efe2b04f457fa575554ed1bd638c5f30ae3cca129d1c01e",
+    "libraries": {
+      "fps-composition.cpp": "7febf7325b9c090d33f7cde54ddc6c4f252189d843dc2461f9188bc45d045dd9",
+      "formal-power-series.cpp": "c419994faad2d01f965bad1e57c8521fea84580e50ca656375eb505484592c84"
+    }
+  },
+  {
+    "key": "composition_large",
+    "problem": "composition_of_formal_power_series_large",
+    "lang": "cpp17",
+    "functions": [
+      "fps_compose"
+    ],
+    "source": "submissions/composition_large.cpp",
+    "source_sha256": "d644e44c97044ac4b22371638430b4baa918e80a8cd89711d265dcdd718b5e54",
+    "libraries": {
+      "fps-composition.cpp": "7febf7325b9c090d33f7cde54ddc6c4f252189d843dc2461f9188bc45d045dd9",
+      "formal-power-series.cpp": "c419994faad2d01f965bad1e57c8521fea84580e50ca656375eb505484592c84"
+    }
+  },
+  {
+    "key": "compositional_inverse_large",
+    "problem": "compositional_inverse_of_formal_power_series_large",
+    "lang": "cpp17",
+    "functions": [
+      "fps_compositional_inverse",
+      "fps_power_projection"
+    ],
+    "source": "submissions/compositional_inverse_large.cpp",
+    "source_sha256": "af13d9a634518d527efe2b04f457fa575554ed1bd638c5f30ae3cca129d1c01e",
+    "libraries": {
+      "fps-composition.cpp": "7febf7325b9c090d33f7cde54ddc6c4f252189d843dc2461f9188bc45d045dd9",
+      "formal-power-series.cpp": "c419994faad2d01f965bad1e57c8521fea84580e50ca656375eb505484592c84"
+    }
+  },
+  {
+    "key": "convolution_998244353",
+    "problem": "convolution_mod",
+    "lang": "cpp17",
+    "functions": [
+      "operator*"
+    ],
+    "source": "submissions/convolution_998244353.cpp",
+    "source_sha256": "02f4b7be36bbc472331683982c5a217a585e92eeffe758f88f83035c47f46ab0",
+    "libraries": {
+      "formal-power-series.cpp": "c419994faad2d01f965bad1e57c8521fea84580e50ca656375eb505484592c84"
+    }
+  },
+  {
+    "key": "convolution_1000000007",
+    "problem": "convolution_mod_1000000007",
+    "lang": "cpp17",
+    "functions": [
+      "operator*"
+    ],
+    "source": "submissions/convolution_1000000007.cpp",
+    "source_sha256": "c588aedb4e6cb8092acd200ec67efc358e040f01e0531b55a1b37c12b1900230",
+    "libraries": {
+      "formal-power-series.cpp": "c419994faad2d01f965bad1e57c8521fea84580e50ca656375eb505484592c84"
+    }
+  },
+  {
+    "key": "division",
+    "problem": "division_of_polynomials",
+    "lang": "cpp17",
+    "functions": [
+      "operator/",
+      "operator%"
+    ],
+    "source": "submissions/division.cpp",
+    "source_sha256": "65fdc30cb63f804a64c7c44db173650e0ee7366c37f9f946d7c5fda7f9c3da82",
+    "libraries": {
+      "formal-power-series.cpp": "c419994faad2d01f965bad1e57c8521fea84580e50ca656375eb505484592c84"
+    }
+  },
+  {
+    "key": "polynomial_inverse",
+    "problem": "inv_of_polynomials",
+    "lang": "cpp17",
+    "functions": [
+      "polynomial_mod_inverse",
+      "polynomial_extgcd",
+      "half-GCD"
+    ],
+    "source": "submissions/polynomial_inverse.cpp",
+    "source_sha256": "2acab25942934639ee525e80fde13ca5f9458caa71728bca0e39bca8bd709bb0",
+    "libraries": {
+      "polynomial-gcd.cpp": "68d3f92fb31fd6a7ea11efaee84ecd516e9529a8b08cce8d6f47a061174e4c3f",
+      "formal-power-series.cpp": "c419994faad2d01f965bad1e57c8521fea84580e50ca656375eb505484592c84"
+    }
+  },
+  {
+    "key": "multipoint",
+    "problem": "multipoint_evaluation",
+    "lang": "cpp17",
+    "functions": [
+      "MultipointEvaluation"
+    ],
+    "source": "submissions/multipoint.cpp",
+    "source_sha256": "e8b1f2f1142a35576a5171b987d283152fd46eb98feb138a38e5faf09de51650",
+    "libraries": {
+      "multipoint-evaluation.cpp": "1dfc38d3e3e6b9bef3fd7b2cfbbae4bf49687f6e80a856f7fbd8e7dbfca15d12",
+      "formal-power-series.cpp": "c419994faad2d01f965bad1e57c8521fea84580e50ca656375eb505484592c84"
+    }
+  },
+  {
+    "key": "interpolation",
+    "problem": "polynomial_interpolation",
+    "lang": "cpp17",
+    "functions": [
+      "polynomial_interpolation"
+    ],
+    "source": "submissions/interpolation.cpp",
+    "source_sha256": "c0c13f8a0d87c4051042d1126da1150b17e261459014833f1dae6b2644dcb220",
+    "libraries": {
+      "polynomial-interpolation.cpp": "31e984762ba206b807d31f4353517d7a069f738ac678b4ac79ee17b7e3064eba",
+      "multipoint-evaluation.cpp": "1dfc38d3e3e6b9bef3fd7b2cfbbae4bf49687f6e80a856f7fbd8e7dbfca15d12",
+      "formal-power-series.cpp": "c419994faad2d01f965bad1e57c8521fea84580e50ca656375eb505484592c84"
+    }
+  },
+  {
+    "key": "sampling_shift",
+    "problem": "shift_of_sampling_points_of_polynomial",
+    "lang": "cpp17",
+    "functions": [
+      "sampling_point_shift"
+    ],
+    "source": "submissions/sampling_shift.cpp",
+    "source_sha256": "536041303f246756acbd3463b4ca941fb98df03f3d2a2b302457c53f00561143",
+    "libraries": {
+      "sampling-point-shift.cpp": "e75abb35211855cd6c8332c9aba4b1a1ffec416bef71ceb0689c0e957f2e4b11",
+      "formal-power-series.cpp": "c419994faad2d01f965bad1e57c8521fea84580e50ca656375eb505484592c84"
+    }
+  },
+  {
+    "key": "bernoulli",
+    "problem": "bernoulli_number",
+    "lang": "cpp17",
+    "functions": [
+      "bernoulli_numbers"
+    ],
+    "source": "submissions/bernoulli.cpp",
+    "source_sha256": "ea190666d793d82d40c25623592c4e1a6cf2abf0ab5e1f81a5ced5ce8281d077",
+    "libraries": {
+      "faulhaber.cpp": "cd77500c6dcb1cb2a476fee1ab5447bf6362b99b5b5f70855c4afeb04bedab17",
+      "formal-power-series.cpp": "c419994faad2d01f965bad1e57c8521fea84580e50ca656375eb505484592c84"
+    }
+  },
+  {
+    "key": "prefix_exclusive",
+    "problem": "prefix_sum_of_polynomial",
+    "lang": "cpp17",
+    "functions": [
+      "prefix_sum_polynomial_exclusive"
+    ],
+    "source": "submissions/prefix_exclusive.cpp",
+    "source_sha256": "62bb81b8e1fafa8e67da3be2ac80a539adf6853db902b2301ac86d426a0069cb",
+    "libraries": {
+      "prefix-sum-polynomial.cpp": "029efdf1f9cbfa3305d4ccf11ba5586c6256c20dfe1dc2d1397dde481ac4dd54",
+      "faulhaber.cpp": "cd77500c6dcb1cb2a476fee1ab5447bf6362b99b5b5f70855c4afeb04bedab17",
+      "formal-power-series.cpp": "c419994faad2d01f965bad1e57c8521fea84580e50ca656375eb505484592c84"
+    }
+  },
+  {
+    "key": "prefix_inclusive",
+    "problem": "prefix_sum_of_polynomial",
+    "lang": "cpp17",
+    "functions": [
+      "prefix_sum_polynomial"
+    ],
+    "source": "submissions/prefix_inclusive.cpp",
+    "source_sha256": "3a1670f036d6223f7c13d41deb3c56e0c7e992c5769b85f14cbf5b9bae03bf6c",
+    "libraries": {
+      "prefix-sum-polynomial.cpp": "029efdf1f9cbfa3305d4ccf11ba5586c6256c20dfe1dc2d1397dde481ac4dd54",
+      "faulhaber.cpp": "cd77500c6dcb1cb2a476fee1ab5447bf6362b99b5b5f70855c4afeb04bedab17",
+      "formal-power-series.cpp": "c419994faad2d01f965bad1e57c8521fea84580e50ca656375eb505484592c84"
+    }
+  },
+  {
+    "key": "mod_sqrt",
+    "problem": "sqrt_mod",
+    "lang": "cpp17",
+    "functions": [
+      "mod_sqrt"
+    ],
+    "source": "submissions/mod_sqrt.cpp",
+    "source_sha256": "85cc36c5ab91a799aee200345c2c954a68ef4c9a68c1b02fcb8ee815c55634c5",
+    "libraries": {
+      "fps-sqrt.cpp": "fa120551149a2fc7af467ded0a03c06677378e604b24b546c932852313cb630f",
+      "formal-power-series.cpp": "c419994faad2d01f965bad1e57c8521fea84580e50ca656375eb505484592c84"
+    }
+  },
+  {
+    "key": "relaxed",
+    "problem": "convolution_mod",
+    "lang": "cpp17",
+    "functions": [
+      "RelaxedMultiplication::append"
+    ],
+    "source": "submissions/relaxed.cpp",
+    "source_sha256": "9a838232f4674a41e4aa9c9b7305677177408e804dfd9cfbb18c91439d6b4507",
+    "libraries": {
+      "relaxed-multiplication.cpp": "d16a72ee75338260157c25e08cb60a1d642c2a3c0f476a63054784b5b32695d0",
+      "formal-power-series.cpp": "c419994faad2d01f965bad1e57c8521fea84580e50ca656375eb505484592c84"
+    }
+  },
+  {
+    "key": "newton",
+    "problem": "inv_of_formal_power_series",
+    "lang": "cpp17",
+    "functions": [
+      "fps_newton"
+    ],
+    "source": "submissions/newton.cpp",
+    "source_sha256": "62cf68957197210eea6ed1ebf86a19d8e29ef728077d28396144220199bfcabf",
+    "libraries": {
+      "fps-newton.cpp": "e47b1d84ab447c258528bc2627d2ee5482305bc98a6f0c5e397e4ae43cc37c0b",
+      "formal-power-series.cpp": "c419994faad2d01f965bad1e57c8521fea84580e50ca656375eb505484592c84"
+    }
+  },
+  {
+    "key": "pow_unit",
+    "problem": "sqrt_of_formal_power_series",
+    "lang": "cpp17",
+    "functions": [
+      "fps_pow_unit"
+    ],
+    "source": "submissions/pow_unit.cpp",
+    "source_sha256": "fe2fb0ca5244ffc1220865dbec0767fa741ed2d0b422695a921ac58bd113b287",
+    "libraries": {
+      "fps-all.cpp": "d7212e290dd9650de0596952aa53e7e8f90f7653835f3dd386e996133eb1446a",
+      "formal-power-series.cpp": "c419994faad2d01f965bad1e57c8521fea84580e50ca656375eb505484592c84",
+      "fps-newton.cpp": "e47b1d84ab447c258528bc2627d2ee5482305bc98a6f0c5e397e4ae43cc37c0b",
+      "fps-sqrt.cpp": "fa120551149a2fc7af467ded0a03c06677378e604b24b546c932852313cb630f",
+      "fps-sparse.cpp": "34749055a0f51a8ee23532e2bd745dd33eec4a9b259240cc68eea858fcdf6f39",
+      "fps-composition.cpp": "7febf7325b9c090d33f7cde54ddc6c4f252189d843dc2461f9188bc45d045dd9",
+      "polynomial-gcd.cpp": "68d3f92fb31fd6a7ea11efaee84ecd516e9529a8b08cce8d6f47a061174e4c3f",
+      "multipoint-evaluation.cpp": "1dfc38d3e3e6b9bef3fd7b2cfbbae4bf49687f6e80a856f7fbd8e7dbfca15d12",
+      "polynomial-interpolation.cpp": "31e984762ba206b807d31f4353517d7a069f738ac678b4ac79ee17b7e3064eba",
+      "sampling-point-shift.cpp": "e75abb35211855cd6c8332c9aba4b1a1ffec416bef71ceb0689c0e957f2e4b11",
+      "faulhaber.cpp": "cd77500c6dcb1cb2a476fee1ab5447bf6362b99b5b5f70855c4afeb04bedab17",
+      "prefix-sum-polynomial.cpp": "029efdf1f9cbfa3305d4ccf11ba5586c6256c20dfe1dc2d1397dde481ac4dd54",
+      "relaxed-multiplication.cpp": "d16a72ee75338260157c25e08cb60a1d642c2a3c0f476a63054784b5b32695d0"
+    }
+  }
+]

@@ -1,42 +1,125 @@
 /*
-<fpsライブラリ>
-  -
+<FPS ライブラリ / C++17>
+  [使い方]
+    #include "formal-power-series.cpp"
+    fps f = {1, 2, 3};
+    auto g = f.inv(100);               // mod x^100 で逆元
+    auto h = f.pow(1000000000000LL, 100);
+    // デフォルトは mod 1000000007。別の型を使う例:
+    // #define FPS_NO_DEFAULT_ALIASES
+    // #include "formal-power-series.cpp"
+    // using mint = LazyMontgomeryModInt<998244353>;
+    // using fps = FormalPowerSeries<mint>;
+    // 拡張全体は fps-all.cpp、個別の機能は各 .cpp を include する。
 
-  [実装/関数]
-    - using mint = LazyMontgomeryModInt<1000000007>; ここで法を変更
-    - using fps  = FormalPowerSeries<mint>;
-    - fps f : 仮のfpsインスタンスを作成
-    - fps g(5) : 長さ5(4次まで) 0で初期化
-    - fps h = {1, 2, 3} : 1+2x+3x^2
-    - f.resize(10) : サイズ変更
-    - f + g / f - g / f += g / f -= g
-    - f *= mint(c) 
-    - f * g / f/g / f % g
-    - f.shrink()  : 末尾の0を削る
-    - f.pre(sz) : 先頭sz項を取得
-    - f.rev() : 係数列を反転
-    - g = f << k : x^k 倍 (f.sizeはk増加) (1+x+2x^2 -> 0 + x + x^2 + 2x^3)
-    - g = f >> k : x^(-k) 倍 (f.sizeはk減少) (1+x+2x^2 -> 1 + 2x)
-    - f.diff() : 微分
-    - f.integral() :積分
-    - f.eval(x) 点評価(xはmint)
-    - f.inv(deg = -1) : f[0]!=0のとき，返り値をdeg次まで削ったもの
-    - f.log(deg = -1) : f[0]==1
-    - f.exp(deg = -1) : f[0]==0
-    - f.pow(int64_t k, deg = -1)
+  [入力・返り値の共通形式]
+    fps = FormalPowerSeries<mint> は係数列を持つ型。
+    f[i] が x^i の係数で、fps{1,2,3} は 1+2x+3x^2 を表す。
+    以下の f,g は fps、c,a は mint。係数がない次数は 0 として扱う。
+    inv/log/exp/pow の deg は返す項数。省略または -1 なら f.size()。
+    これらは次数 deg 未満の係数を長さ deg の fps で返す。deg=0 は空列。
+
+  [各関数・演算子の入力と返り値]
+    fps(), fps(n), fps{a0,a1,...}
+      入力: なし、非負の項数 n、または係数の列。
+      結果: それぞれ空の FPS、n 項すべて 0 の FPS、指定した係数の FPS を作る。
+    f.resize(n)
+      入力: 変更後の非負の項数 n。
+      結果: f を n 項に変更する。延長部分は 0、短縮時は高次項を削除。返り値なし。
+    f.size(), f.empty()
+      入力: なし。返り値: 現在の項数、または係数列が空かどうかの bool。
+      係数がすべて 0 でも、項数が正なら empty() は false。
+    f + g, f - g, f + c, f - c, -f
+      入力: 加減算する多項式 g または定数 c（-f は追加の入力なし）。
+      返り値: 和・差・符号反転した fps。c は定数項だけに加減する。
+    f * g, f * c
+      入力: 掛ける多項式 g または係数 c。
+      返り値: 多項式の積、または全係数を c 倍した fps。自動で次数制限はしない。
+    f / g
+      入力: 零多項式でない除数 g。
+      返り値: f=q*g+r, deg(r)<deg(g) を満たす多項式の商 q を fps で返す。
+      FPS の除算 f/g mod x^N が必要なら (f*g.inv(N)).pre(N) とする。
+    f % g
+      入力: 零多項式でない除数 g。
+      返り値: 多項式の剰余 r。末尾の 0 を除去し、零多項式なら空列を返す。
+    f += g, f -= g, f *= g, f /= g, f %= g, f += c, f -= c, f *= c
+      入力: 上記と同じ演算対象。結果: f 自身を更新し、更新後の f への参照を返す。
+    f.shrink()
+      入力: なし。結果: f の末尾の 0 をすべて削除する。返り値なし。
+    f.pre(sz)
+      入力: 非負の項数 sz。
+      返り値: 先頭 sz 項を持つ新しい fps。不足分は 0 埋めする。f 自身は変えない。
+    f.rev()
+      入力: なし。返り値: 現在の係数列を逆順に並べた fps。長さは変わらない。
+    f.dot(g)
+      入力: 係数列 g。
+      返り値: 各成分が f[i]*g[i] の fps。長さは min(f.size(),g.size())。
+      係数ごとの積であり、多項式の積や、総和を取る内積ではない。
+    f << k
+      入力: 非負整数 k。返り値: 先頭に k 個の 0 を付けた、x^k*f(x) の係数列。
+    f >> k
+      入力: 非負整数 k。返り値: 低次の k 項を取り除いた係数列。
+      x^k で多項式除算した商に対応する。k>=f.size() なら空列。
+    f.diff()
+      入力: なし（f の係数列を使う）。
+      返り値: 微分 f'(x) の係数列。長さは max(0,f.size()-1)。
+    f.integral()
+      入力: なし（f の係数列を使う）。
+      返り値: 定数項を 0 とした不定積分の係数列。長さは f.size()+1。
+    f.eval(a)
+      入力: 評価する点 a。
+      返り値: 多項式に a を代入した値 f(a) を mint で返す。
+    f.inv(deg=-1)
+      入力: 必要な項数 deg。f の定数項は非零。
+      返り値: f*g=1 mod x^deg を満たす乗法逆元 g の係数列。
+    f.log(deg=-1)
+      入力: 必要な項数 deg。f の定数項は 1。
+      返り値: 形式的対数 log(f) の係数列。返り値の定数項は 0。
+    f.exp(deg=-1)
+      入力: 必要な項数 deg。f の定数項は 0（空列も可）。
+      返り値: 形式的指数関数 exp(f) の係数列。deg>0 なら定数項は 1。
+    f.pow(k,deg=-1)
+      入力: 非負の int64_t の指数 k と必要な項数 deg。
+      返り値: f(x)^k の係数列。先頭が 0 でもよい。k=0 では 1 mod x^deg。
+
+  [係数型 mint の主な入力と返り値]
+    mint(a): 整数 a を法 p で正規化した係数を作る。
+    a.get(): 入力なし。a を表す 0 以上 p 未満の整数を返す。
+    mint::get_mod(): 入力なし。現在の法 p を整数で返す。
+    a.pow(k): 非負整数 k を受け取り、a^k mod p を mint で返す。
+    a.inverse(): 入力なし。非零の a に対する乗法逆元を mint で返す。
+    動的法の型の set_mod(p): 法 p を設定する。返り値なし。
+      法を変更する前に作った係数は、そのまま再利用しないこと。
 
   [計算時間]
+      - 乗算・inv・log・exp: O(N log N)、pow: O(N log N + log k)
+      - 加減算・微積分・1 点評価: O(N)
+      - 多項式除算・剰余: O(N log N)
 
   [備考]
+      - 係数体の法 p は 2<p<2^30 の素数。log/exp/pow/積分は必要な次数 < p。
+      - NTT 対応の固定素数では直接 NTT、それ以外は 3 素数 CRT を使う。
+      - CRT 畳み込みの変換長は最大 2^24。直接 NTT は法ごとの上限。
+      - .ntt(), .intt(), .ntt_doubling(), ntt_pr() は未対応で、呼ぶと終了する。
+        通常の FPS 演算からこれらを呼び出す必要はない。
       - int * mint は不可能! mint * int の順で
 
-  [参照]
-      -
-
-  [verified at]
-      -
+  [検証]
+      - tests/run-tests.sh でローカル検証を実行できる。
 
 */
+
+#ifndef FORMAL_POWER_SERIES_CPP
+#define FORMAL_POWER_SERIES_CPP
+
+#include <algorithm>
+#include <cassert>
+#include <cstdint>
+#include <cstdlib>
+#include <iostream>
+#include <iterator>
+#include <vector>
+using namespace std;
 
 template <uint32_t mod>
 struct LazyMontgomeryModInt {
@@ -247,7 +330,8 @@ struct NTT {
           a[j0] = t0p2 + t1p3, a[j0 + v] = t0p2 - t1p3;
           a[j2] = t0m2 + t1m3, a[j2 + v] = t0m2 - t1m3;
         }
-        xx *= dw[__builtin_ctzll((jh += 4))];
+        jh += 4;
+        if (jh < u) xx *= dw[__builtin_ctzll(jh)];
       }
       u <<= 2;
       v >>= 2;
@@ -296,7 +380,8 @@ struct NTT {
           a[j0] = t0p1 + t2p3, a[j2] = (t0p1 - t2p3) * ww;
           a[j0 + v] = t0m1 + t2m3, a[j2 + v] = (t0m1 - t2m3) * ww;
         }
-        xx *= dy[__builtin_ctzll(jh += 4)];
+        jh += 4;
+        if (jh < u) xx *= dy[__builtin_ctzll(jh)];
       }
       u >>= 4;
       v <<= 2;
@@ -324,6 +409,7 @@ struct NTT {
   }
 
   vector<mint> multiply(const vector<mint> &a, const vector<mint> &b) {
+    if (a.empty() || b.empty()) return {};
     int l = a.size() + b.size() - 1;
     if (min<int>(a.size(), b.size()) <= 40) {
       vector<mint> s(l);
@@ -333,6 +419,7 @@ struct NTT {
     }
     int k = 2, M = 4;
     while (M < l) M <<= 1, ++k;
+    assert(k <= level);
     setwy(k);
     vector<mint> s(M);
     for (int i = 0; i < (int)a.size(); ++i) s[i] = a[i];
@@ -516,7 +603,7 @@ vector<int> multiply(const vector<T> &s, const vector<T> &t, int mod) {
 
 template <typename mint>
 vector<mint> multiply(const vector<mint> &a, const vector<mint> &b) {
-  if (a.size() == 0 && b.size() == 0) return {};
+  if (a.empty() || b.empty()) return {};
   if (min<int>(a.size(), b.size()) < 128) {
     vector<mint> ret(a.size() + b.size() - 1);
     for (int i = 0; i < (int)a.size(); ++i)
@@ -534,7 +621,7 @@ vector<mint> multiply(const vector<mint> &a, const vector<mint> &b) {
 
 template <typename T>
 vector<u128> multiply_u128(const vector<T> &s, const vector<T> &t) {
-  if (s.size() == 0 && t.size() == 0) return {};
+  if (s.empty() || t.empty()) return {};
   if (min<int>(s.size(), t.size()) < 128) {
     vector<u128> ret(s.size() + t.size() - 1);
     for (int i = 0; i < (int)s.size(); ++i)
@@ -588,19 +675,24 @@ struct FormalPowerSeries : vector<mint> {
   }
 
   FPS &operator*=(const mint &v) {
-    for (int k = 0; k < (int)this->size(); k++) (*this)[k] *= v;
+    // f *= f[i] の場合も、全係数を更新前の f[i] で掛ける。
+    const mint scale = v;
+    for (int k = 0; k < (int)this->size(); k++) (*this)[k] *= scale;
     return *this;
   }
 
   FPS &operator/=(const FPS &r) {
-    if (this->size() < r.size()) {
+    FPS divisor(r);
+    divisor.shrink();
+    assert(!divisor.empty());
+    this->shrink();
+    if (this->size() < divisor.size()) {
       this->clear();
       return *this;
     }
-    int n = this->size() - r.size() + 1;
-    if ((int)r.size() <= 64) {
-      FPS f(*this), g(r);
-      g.shrink();
+    int n = this->size() - divisor.size() + 1;
+    if ((int)divisor.size() <= 64) {
+      FPS f(*this), g(divisor);
       mint coeff = g.back().inverse();
       for (auto &x : g) x *= coeff;
       int deg = (int)f.size() - (int)g.size() + 1;
@@ -614,7 +706,7 @@ struct FormalPowerSeries : vector<mint> {
       this->resize(n, mint(0));
       return *this;
     }
-    return *this = ((*this).rev().pre(n) * r.rev().inv(n)).pre(n).rev();
+    return *this = ((*this).rev().pre(n) * divisor.rev().inv(n)).pre(n).rev();
   }
 
   FPS &operator%=(const FPS &r) {
@@ -655,12 +747,14 @@ struct FormalPowerSeries : vector<mint> {
 
   // 前 sz 項を取ってくる。sz に足りない項は 0 埋めする
   FPS pre(int sz) const {
+    assert(sz >= 0);
     FPS ret(begin(*this), begin(*this) + min((int)this->size(), sz));
     if ((int)ret.size() < sz) ret.resize(sz);
     return ret;
   }
 
   FPS operator>>(int sz) const {
+    assert(sz >= 0);
     if ((int)this->size() <= sz) return {};
     FPS ret(*this);
     ret.erase(ret.begin(), ret.begin() + sz);
@@ -668,6 +762,7 @@ struct FormalPowerSeries : vector<mint> {
   }
 
   FPS operator<<(int sz) const {
+    assert(sz >= 0);
     FPS ret(*this);
     ret.insert(ret.begin(), sz, mint(0));
     return ret;
@@ -690,6 +785,7 @@ struct FormalPowerSeries : vector<mint> {
     ret[0] = mint(0);
     if (n > 0) ret[1] = mint(1);
     auto mod = mint::get_mod();
+    assert(uint64_t(n) < uint64_t(mod));
     for (int i = 2; i <= n; i++) ret[i] = (-ret[mod % i]) * (mod / i);
     for (int i = 0; i < n; i++) ret[i + 1] *= (*this)[i];
     return ret;
@@ -702,29 +798,34 @@ struct FormalPowerSeries : vector<mint> {
   }
 
   FPS log(int deg = -1) const {
-    assert(!(*this).empty() && (*this)[0] == mint(1));
     if (deg == -1) deg = (int)this->size();
-    return (this->diff() * this->inv(deg)).pre(deg - 1).integral();
+    assert(deg >= 0 && uint64_t(deg) <= uint64_t(mint::get_mod()));
+    if (deg == 0) return {};
+    assert(!this->empty() && (*this)[0] == mint(1));
+    return (this->pre(deg).diff() * this->inv(deg)).pre(deg - 1).integral();
   }
 
   FPS pow(int64_t k, int deg = -1) const {
     const int n = (int)this->size();
     if (deg == -1) deg = n;
+    assert(k >= 0 && deg >= 0);
+    assert(uint64_t(deg) <= uint64_t(mint::get_mod()));
+    if (deg == 0) return {};
     if (k == 0) {
       FPS ret(deg);
       if (deg) ret[0] = 1;
       return ret;
     }
-    for (int i = 0; i < n; i++) {
+    for (int i = 0; i < min(n, deg); i++) {
       if ((*this)[i] != mint(0)) {
+        if (i && k > (deg - 1) / i) return FPS(deg, mint(0));
+        int shift = int(i * k), need = deg - shift;
         mint rev = mint(1) / (*this)[i];
-        FPS ret = (((*this * rev) >> i).log(deg) * k).exp(deg);
+        FPS ret = ((((*this >> i).pre(need) * rev).log(need)) * mint(k)).exp(need);
         ret *= (*this)[i].pow(k);
-        ret = (ret << (i * k)).pre(deg);
-        if ((int)ret.size() < deg) ret.resize(deg, mint(0));
-        return ret;
+        return (ret << shift).pre(deg);
       }
-      if (__int128_t(i + 1) * k >= deg) return FPS(deg, mint(0));
+      if (k > (deg - 1) / (i + 1)) return FPS(deg, mint(0));
     }
     return FPS(deg, mint(0));
   }
@@ -767,6 +868,27 @@ int FormalPowerSeries<mint>::ntt_pr() {
   exit(1);
 }
 
+namespace fps_detail {
+template <typename Mint>
+vector<Mint> convolution(const vector<Mint> &a, const vector<Mint> &b) {
+  return ArbitraryNTT::multiply(a, b);
+}
+template <uint32_t Mod>
+vector<LazyMontgomeryModInt<Mod>> convolution(
+    const vector<LazyMontgomeryModInt<Mod>> &a,
+    const vector<LazyMontgomeryModInt<Mod>> &b) {
+  // 十分な 2 冪根がある固定法のみ直接 NTT。それ以外は CRT。
+  if constexpr (__builtin_ctz(Mod - 1) >= 3) {
+    if (a.empty() || b.empty()) return {};
+    if (a.size() + b.size() - 1 <= (size_t(1) << __builtin_ctz(Mod - 1))) {
+      static NTT<LazyMontgomeryModInt<Mod>> engine;
+      return engine.multiply(a, b);
+    }
+  }
+  return ArbitraryNTT::multiply(a, b);
+}
+}  // namespace fps_detail
+
 template <typename mint>
 FormalPowerSeries<mint>& FormalPowerSeries<mint>::operator*=(
     const FormalPowerSeries<mint>& r) {
@@ -774,30 +896,42 @@ FormalPowerSeries<mint>& FormalPowerSeries<mint>::operator*=(
     this->clear();
     return *this;
   }
-  auto ret = ArbitraryNTT::multiply(*this, r);
+  auto ret = fps_detail::convolution(
+      static_cast<const vector<mint>&>(*this), static_cast<const vector<mint>&>(r));
   return *this = FormalPowerSeries<mint>(ret.begin(), ret.end());
 }
 
 template <typename mint>
 FormalPowerSeries<mint> FormalPowerSeries<mint>::inv(int deg) const {
-  assert((*this)[0] != mint(0));
   if (deg == -1) deg = (*this).size();
+  assert(deg >= 0);
+  if (deg == 0) return {};
+  assert(!this->empty() && (*this)[0] != mint(0));
   FormalPowerSeries<mint> ret({mint(1) / (*this)[0]});
-  for (int i = 1; i < deg; i <<= 1)
-    ret = (ret + ret - ret * ret * (*this).pre(i << 1)).pre(i << 1);
+  for (int i = 1; i < deg; i <<= 1) {
+    int next = min(deg, i << 1);
+    ret = (ret + ret - ret * (ret * this->pre(next)).pre(next)).pre(next);
+  }
   return ret.pre(deg);
 }
 
 template <typename mint>
 FormalPowerSeries<mint> FormalPowerSeries<mint>::exp(int deg) const {
-  assert((*this).size() == 0 || (*this)[0] == mint(0));
   if (deg == -1) deg = (int)this->size();
+  assert(deg >= 0 && uint64_t(deg) <= uint64_t(mint::get_mod()));
+  if (deg == 0) return {};
+  assert(this->empty() || (*this)[0] == mint(0));
   FormalPowerSeries<mint> ret({mint(1)});
   for (int i = 1; i < deg; i <<= 1) {
-    ret = (ret * (pre(i << 1) + mint(1) - ret.log(i << 1))).pre(i << 1);
+    int next = min(deg, i << 1);
+    ret = (ret * (pre(next) + mint(1) - ret.log(next))).pre(next);
   }
   return ret.pre(deg);
 }
 
+#ifndef FPS_NO_DEFAULT_ALIASES
 using mint = LazyMontgomeryModInt<1000000007>;
 using fps = FormalPowerSeries<mint>;
+#endif
+
+#endif  // FORMAL_POWER_SERIES_CPP

@@ -1,0 +1,146 @@
+[
+  {
+    "key": "polynomial_factorial",
+    "problem": "factorial",
+    "source_sha256": "fbccddbfa8a3cc80d8ce4a76989f92eff401cb33c11afe8259cc7a2c32240cff",
+    "upstream_commit": "73876f1cbcf082d2b22722924b924d3d65a2f00e",
+    "mode": "full",
+    "cases": [
+      {
+        "name": "example_00.in",
+        "status": "PASS",
+        "seconds": 0.38043041600030847,
+        "input_sha256": "180d1bbdde5539dd3a77d325f8940297325665f9f1be249c051dad6aa177200a",
+        "returncode": 0,
+        "stderr": "",
+        "checker": "ok 5 tokens\n"
+      },
+      {
+        "name": "near_half_00.in",
+        "status": "PASS",
+        "seconds": 0.31458395801018924,
+        "input_sha256": "b9b509e96007f2595f9a1845c56544b107a20794261c0a3913056ebc1c472d48",
+        "returncode": 0,
+        "stderr": "",
+        "checker": "ok 5 tokens\n"
+      },
+      {
+        "name": "near_half_01.in",
+        "status": "PASS",
+        "seconds": 0.34264049999183044,
+        "input_sha256": "78c59f15afe18136e693628e08aa54d462218ac825d29667c75f5d0e6044babc",
+        "returncode": 0,
+        "stderr": "",
+        "checker": "ok 5 tokens\n"
+      },
+      {
+        "name": "near_max_00.in",
+        "status": "PASS",
+        "seconds": 0.3857751250034198,
+        "input_sha256": "da530850d58cc2e3e79f6104dc0af91b76a0ec7d61fc5120b4487f2a94312d6f",
+        "returncode": 0,
+        "stderr": "",
+        "checker": "ok 5 tokens\n"
+      },
+      {
+        "name": "near_max_01.in",
+        "status": "PASS",
+        "seconds": 0.28172054199967533,
+        "input_sha256": "2d4f31d5ddec6a701ed69d204aaa8c49439066f4d675fd99774795757358dc3c",
+        "returncode": 0,
+        "stderr": "",
+        "checker": "ok 5 tokens\n"
+      },
+      {
+        "name": "random_00.in",
+        "status": "PASS",
+        "seconds": 0.13668995798798278,
+        "input_sha256": "ef2dc732889096480a438e542b5dc79018083e8771651ef8ffa37b0fd1f6c246",
+        "returncode": 0,
+        "stderr": "",
+        "checker": "ok 5 tokens\n"
+      },
+      {
+        "name": "random_01.in",
+        "status": "PASS",
+        "seconds": 0.092372457991587,
+        "input_sha256": "0842027f68881d70d3376224a68b92f9e19f13840ef9d573acdba3c85d1fc1d0",
+        "returncode": 0,
+        "stderr": "",
+        "checker": "ok 5 tokens\n"
+      }
+    ]
+  },
+  {
+    "key": "p_recursive_factorial",
+    "problem": "factorial",
+    "source_sha256": "515cb0d984cdfaeab10e2f067335ec8fbd22d1a757eeb7fdc53a71643c04540b",
+    "upstream_commit": "73876f1cbcf082d2b22722924b924d3d65a2f00e",
+    "mode": "full",
+    "cases": [
+      {
+        "name": "example_00.in",
+        "status": "PASS",
+        "seconds": 0.3626521250116639,
+        "input_sha256": "180d1bbdde5539dd3a77d325f8940297325665f9f1be249c051dad6aa177200a",
+        "returncode": 0,
+        "stderr": "",
+        "checker": "ok 5 tokens\n"
+      },
+      {
+        "name": "near_half_00.in",
+        "status": "PASS",
+        "seconds": 0.5003440419968683,
+        "input_sha256": "b9b509e96007f2595f9a1845c56544b107a20794261c0a3913056ebc1c472d48",
+        "returncode": 0,
+        "stderr": "",
+        "checker": "ok 5 tokens\n"
+      },
+      {
+        "name": "near_half_01.in",
+        "status": "PASS",
+        "seconds": 0.5228733750118408,
+        "input_sha256": "78c59f15afe18136e693628e08aa54d462218ac825d29667c75f5d0e6044babc",
+        "returncode": 0,
+        "stderr": "",
+        "checker": "ok 5 tokens\n"
+      },
+      {
+        "name": "near_max_00.in",
+        "status": "PASS",
+        "seconds": 0.5235480410046875,
+        "input_sha256": "da530850d58cc2e3e79f6104dc0af91b76a0ec7d61fc5120b4487f2a94312d6f",
+        "returncode": 0,
+        "stderr": "",
+        "checker": "ok 5 tokens\n"
+      },
+      {
+        "name": "near_max_01.in",
+        "status": "PASS",
+        "seconds": 0.7749101250083186,
+        "input_sha256": "2d4f31d5ddec6a701ed69d204aaa8c49439066f4d675fd99774795757358dc3c",
+        "returncode": 0,
+        "stderr": "",
+        "checker": "ok 5 tokens\n"
+      },
+      {
+        "name": "random_00.in",
+        "status": "PASS",
+        "seconds": 0.3838902919960674,
+        "input_sha256": "ef2dc732889096480a438e542b5dc79018083e8771651ef8ffa37b0fd1f6c246",
+        "returncode": 0,
+        "stderr": "",
+        "checker": "ok 5 tokens\n"
+      },
+      {
+        "name": "random_01.in",
+        "status": "PASS",
+        "seconds": 0.30694008301361464,
+        "input_sha256": "0842027f68881d70d3376224a68b92f9e19f13840ef9d573acdba3c85d1fc1d0",
+        "returncode": 0,
+        "stderr": "",
+        "checker": "ok 5 tokens\n"
+      }
+    ]
+  }
+]

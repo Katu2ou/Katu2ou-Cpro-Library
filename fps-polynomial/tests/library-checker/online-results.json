@@ -1,0 +1,1428 @@
+[
+  {
+    "key": "inv",
+    "problem": "inv_of_formal_power_series",
+    "lang": "cpp17",
+    "functions": [
+      "f.inv(n)"
+    ],
+    "source": "submissions/inv.cpp",
+    "source_sha256": "4c7979bacb5835234f8ea060ee66bb79f662991cb8b502a4e74af45bdc37ca16",
+    "libraries": {
+      "formal-power-series.cpp": "77d3c79fdd0122a18ff26743431401ea01f03663ca47b59e0601c58a112c2056"
+    },
+    "started_at": "2026-10-29T07:00:17.472920+00:00",
+    "status": "AC",
+    "anonymous": true,
+    "id": 413895,
+    "url": "https://judge.yosupo.jp/submission/413895",
+    "source_verified": true,
+    "overview": {
+      "id": 413895,
+      "is_latest": true,
+      "lang": "cpp17",
+      "memory": 22523904,
+      "problem_name": "inv_of_formal_power_series",
+      "problem_title": "Inv of Formal Power Series",
+      "status": "AC",
+      "submission_time": "2026-10-29T07:00:17.928839Z",
+      "time": 0.272
+    },
+    "checked_at": "2026-10-29T07:00:52.752639+00:00"
+  },
+  {
+    "key": "inv_sparse",
+    "problem": "inv_of_formal_power_series_sparse",
+    "lang": "cpp17",
+    "functions": [
+      "fps_inv_sparse(f,n)"
+    ],
+    "source": "submissions/inv_sparse.cpp",
+    "source_sha256": "082ad7db0b2db4207db853ea9bf83e20f6e732fef123ab1e67a9764967d059ee",
+    "libraries": {
+      "fps-sparse.cpp": "34749055a0f51a8ee23532e2bd745dd33eec4a9b259240cc68eea858fcdf6f39",
+      "fps-sqrt.cpp": "fa120551149a2fc7af467ded0a03c06677378e604b24b546c932852313cb630f",
+      "formal-power-series.cpp": "77d3c79fdd0122a18ff26743431401ea01f03663ca47b59e0601c58a112c2056"
+    },
+    "started_at": "2026-10-29T07:00:19.002373+00:00",
+    "status": "AC",
+    "anonymous": true,
+    "id": 413896,
+    "url": "https://judge.yosupo.jp/submission/413896",
+    "source_verified": true,
+    "overview": {
+      "id": 413896,
+      "is_latest": true,
+      "lang": "cpp17",
+      "memory": 14602240,
+      "problem_name": "inv_of_formal_power_series_sparse",
+      "problem_title": "Inv of Formal Power Series (Sparse)",
+      "status": "AC",
+      "submission_time": "2026-10-29T07:00:19.170807Z",
+      "time": 0.07
+    },
+    "checked_at": "2026-10-29T07:01:15.812932+00:00"
+  },
+  {
+    "key": "log",
+    "problem": "log_of_formal_power_series",
+    "lang": "cpp17",
+    "functions": [
+      "f.log(n)"
+    ],
+    "source": "submissions/log.cpp",
+    "source_sha256": "3cbebd6035b549a7536ac9f05603c219f2d96d4f54cb8d135c09f413f3d3fd9c",
+    "libraries": {
+      "formal-power-series.cpp": "77d3c79fdd0122a18ff26743431401ea01f03663ca47b59e0601c58a112c2056"
+    },
+    "started_at": "2026-10-29T07:00:57.955541+00:00",
+    "status": "AC",
+    "anonymous": true,
+    "id": 413897,
+    "url": "https://judge.yosupo.jp/submission/413897",
+    "source_verified": true,
+    "overview": {
+      "id": 413897,
+      "is_latest": true,
+      "lang": "cpp17",
+      "memory": 24207360,
+      "problem_name": "log_of_formal_power_series",
+      "problem_title": "Log of Formal Power Series",
+      "status": "AC",
+      "submission_time": "2026-10-29T07:00:58.328016Z",
+      "time": 0.332
+    },
+    "checked_at": "2026-10-29T07:01:44.267790+00:00"
+  },
+  {
+    "key": "log_sparse",
+    "problem": "log_of_formal_power_series_sparse",
+    "lang": "cpp17",
+    "functions": [
+      "fps_log_sparse(f,n)"
+    ],
+    "source": "submissions/log_sparse.cpp",
+    "source_sha256": "b6439654e40d48c5355c10ded88520666795037e1fe74e35e116c8c419890142",
+    "libraries": {
+      "fps-sparse.cpp": "34749055a0f51a8ee23532e2bd745dd33eec4a9b259240cc68eea858fcdf6f39",
+      "fps-sqrt.cpp": "fa120551149a2fc7af467ded0a03c06677378e604b24b546c932852313cb630f",
+      "formal-power-series.cpp": "77d3c79fdd0122a18ff26743431401ea01f03663ca47b59e0601c58a112c2056"
+    },
+    "started_at": "2026-10-29T07:01:21.016556+00:00",
+    "status": "AC",
+    "anonymous": true,
+    "id": 413898,
+    "url": "https://judge.yosupo.jp/submission/413898",
+    "source_verified": true,
+    "overview": {
+      "id": 413898,
+      "is_latest": true,
+      "lang": "cpp17",
+      "memory": 14774272,
+      "problem_name": "log_of_formal_power_series_sparse",
+      "problem_title": "Log of Formal Power Series (Sparse)",
+      "status": "AC",
+      "submission_time": "2026-10-29T07:01:21.205603Z",
+      "time": 0.08
+    },
+    "checked_at": "2026-10-29T07:02:07.152183+00:00"
+  },
+  {
+    "key": "exp",
+    "problem": "exp_of_formal_power_series",
+    "lang": "cpp17",
+    "functions": [
+      "f.exp(n)"
+    ],
+    "source": "submissions/exp.cpp",
+    "source_sha256": "63e3e8f244b5aca01b2552720eddc42527ded2c96e18a580b827dbe6447bf6b3",
+    "libraries": {
+      "formal-power-series.cpp": "77d3c79fdd0122a18ff26743431401ea01f03663ca47b59e0601c58a112c2056"
+    },
+    "started_at": "2026-10-29T07:01:49.473361+00:00",
+    "status": "AC",
+    "anonymous": true,
+    "id": 413899,
+    "url": "https://judge.yosupo.jp/submission/413899",
+    "source_verified": true,
+    "overview": {
+      "id": 413899,
+      "is_latest": true,
+      "lang": "cpp17",
+      "memory": 28229632,
+      "problem_name": "exp_of_formal_power_series",
+      "problem_title": "Exp of Formal Power Series",
+      "status": "AC",
+      "submission_time": "2026-10-29T07:01:49.652933Z",
+      "time": 0.712
+    },
+    "checked_at": "2026-10-29T07:02:41.040873+00:00"
+  },
+  {
+    "key": "exp_sparse",
+    "problem": "exp_of_formal_power_series_sparse",
+    "lang": "cpp17",
+    "functions": [
+      "fps_exp_sparse(f,n)"
+    ],
+    "source": "submissions/exp_sparse.cpp",
+    "source_sha256": "6a4ce08a58148bfde26ea5e63620935333496db2b997baf440e2a4aa4b07db0b",
+    "libraries": {
+      "fps-sparse.cpp": "34749055a0f51a8ee23532e2bd745dd33eec4a9b259240cc68eea858fcdf6f39",
+      "fps-sqrt.cpp": "fa120551149a2fc7af467ded0a03c06677378e604b24b546c932852313cb630f",
+      "formal-power-series.cpp": "77d3c79fdd0122a18ff26743431401ea01f03663ca47b59e0601c58a112c2056"
+    },
+    "started_at": "2026-10-29T07:02:12.356079+00:00",
+    "status": "AC",
+    "anonymous": true,
+    "id": 413900,
+    "url": "https://judge.yosupo.jp/submission/413900",
+    "source_verified": true,
+    "overview": {
+      "id": 413900,
+      "is_latest": true,
+      "lang": "cpp17",
+      "memory": 14729216,
+      "problem_name": "exp_of_formal_power_series_sparse",
+      "problem_title": "Exp of Formal Power Series (Sparse)",
+      "status": "AC",
+      "submission_time": "2026-10-29T07:02:12.526931Z",
+      "time": 0.089
+    },
+    "checked_at": "2026-10-29T07:03:04.250907+00:00"
+  },
+  {
+    "key": "pow",
+    "problem": "pow_of_formal_power_series",
+    "lang": "cpp17",
+    "functions": [
+      "f.pow(k,n)"
+    ],
+    "source": "submissions/pow.cpp",
+    "source_sha256": "17c10c33fb289b3acbb0fb9338b5cef8aabd040373d961e72d13af0c952501e9",
+    "libraries": {
+      "formal-power-series.cpp": "77d3c79fdd0122a18ff26743431401ea01f03663ca47b59e0601c58a112c2056"
+    },
+    "started_at": "2026-10-29T07:02:46.261755+00:00",
+    "status": "AC",
+    "anonymous": true,
+    "id": 413901,
+    "url": "https://judge.yosupo.jp/submission/413901",
+    "source_verified": true,
+    "overview": {
+      "id": 413901,
+      "is_latest": true,
+      "lang": "cpp17",
+      "memory": 39280640,
+      "problem_name": "pow_of_formal_power_series",
+      "problem_title": "Pow of Formal Power Series",
+      "status": "AC",
+      "submission_time": "2026-10-29T07:02:46.472272Z",
+      "time": 0.974
+    },
+    "checked_at": "2026-10-29T07:03:49.061484+00:00"
+  },
+  {
+    "key": "pow_sparse",
+    "problem": "pow_of_formal_power_series_sparse",
+    "lang": "cpp17",
+    "functions": [
+      "fps_pow_sparse(f,exponent,n)"
+    ],
+    "source": "submissions/pow_sparse.cpp",
+    "source_sha256": "6b7a102d54ff3eb50d118f373dc7ada26f9963d197b1c1abf391a37ce6f47eec",
+    "libraries": {
+      "fps-sparse.cpp": "34749055a0f51a8ee23532e2bd745dd33eec4a9b259240cc68eea858fcdf6f39",
+      "fps-sqrt.cpp": "fa120551149a2fc7af467ded0a03c06677378e604b24b546c932852313cb630f",
+      "formal-power-series.cpp": "77d3c79fdd0122a18ff26743431401ea01f03663ca47b59e0601c58a112c2056"
+    },
+    "started_at": "2026-10-29T07:03:09.489574+00:00",
+    "status": "AC",
+    "anonymous": true,
+    "id": 413902,
+    "url": "https://judge.yosupo.jp/submission/413902",
+    "source_verified": true,
+    "overview": {
+      "id": 413902,
+      "is_latest": true,
+      "lang": "cpp17",
+      "memory": 22732800,
+      "problem_name": "pow_of_formal_power_series_sparse",
+      "problem_title": "Pow of Formal Power Series (Sparse)",
+      "status": "AC",
+      "submission_time": "2026-10-29T07:03:09.686302Z",
+      "time": 0.104
+    },
+    "checked_at": "2026-10-29T07:04:18.218139+00:00"
+  },
+  {
+    "key": "sqrt",
+    "problem": "sqrt_of_formal_power_series",
+    "lang": "cpp17",
+    "functions": [
+      "fps_sqrt(f,n)"
+    ],
+    "source": "submissions/sqrt.cpp",
+    "source_sha256": "50f4c7cd288abd57a0982367e50983cf63d04ae948ecc8ea1f62edfb15ebd896",
+    "libraries": {
+      "fps-sqrt.cpp": "fa120551149a2fc7af467ded0a03c06677378e604b24b546c932852313cb630f",
+      "formal-power-series.cpp": "77d3c79fdd0122a18ff26743431401ea01f03663ca47b59e0601c58a112c2056"
+    },
+    "started_at": "2026-10-29T07:03:54.271763+00:00",
+    "status": "AC",
+    "anonymous": true,
+    "id": 413903,
+    "url": "https://judge.yosupo.jp/submission/413903",
+    "source_verified": true,
+    "overview": {
+      "id": 413903,
+      "is_latest": true,
+      "lang": "cpp17",
+      "memory": 27492352,
+      "problem_name": "sqrt_of_formal_power_series",
+      "problem_title": "Sqrt of Formal Power Series",
+      "status": "AC",
+      "submission_time": "2026-10-29T07:03:54.437101Z",
+      "time": 0.586
+    },
+    "checked_at": "2026-10-29T07:04:57.686812+00:00"
+  },
+  {
+    "key": "sqrt_sparse",
+    "problem": "sqrt_of_formal_power_series_sparse",
+    "lang": "cpp17",
+    "functions": [
+      "fps_sqrt_sparse(f,n)"
+    ],
+    "source": "submissions/sqrt_sparse.cpp",
+    "source_sha256": "6550441bf95253ee362533b37c181d9054a75395180c889da4b2dc9cd7384f5a",
+    "libraries": {
+      "fps-sparse.cpp": "34749055a0f51a8ee23532e2bd745dd33eec4a9b259240cc68eea858fcdf6f39",
+      "fps-sqrt.cpp": "fa120551149a2fc7af467ded0a03c06677378e604b24b546c932852313cb630f",
+      "formal-power-series.cpp": "77d3c79fdd0122a18ff26743431401ea01f03663ca47b59e0601c58a112c2056"
+    },
+    "started_at": "2026-10-29T07:04:23.442377+00:00",
+    "status": "AC",
+    "anonymous": true,
+    "id": 413904,
+    "url": "https://judge.yosupo.jp/submission/413904",
+    "source_verified": true,
+    "overview": {
+      "id": 413904,
+      "is_latest": true,
+      "lang": "cpp17",
+      "memory": 22691840,
+      "problem_name": "sqrt_of_formal_power_series_sparse",
+      "problem_title": "Sqrt of Formal Power Series (Sparse)",
+      "status": "AC",
+      "submission_time": "2026-10-29T07:04:23.650473Z",
+      "time": 0.127
+    },
+    "checked_at": "2026-10-29T07:05:36.968251+00:00"
+  },
+  {
+    "key": "composition",
+    "problem": "composition_of_formal_power_series",
+    "lang": "cpp17",
+    "functions": [
+      "fps_compose"
+    ],
+    "source": "submissions/composition.cpp",
+    "source_sha256": "9d17647b5f5ce5cce7fdaf5823629265d48ef1b341682cd4ce4d1530b4d37fcc",
+    "libraries": {
+      "fps-composition.cpp": "7febf7325b9c090d33f7cde54ddc6c4f252189d843dc2461f9188bc45d045dd9",
+      "formal-power-series.cpp": "77d3c79fdd0122a18ff26743431401ea01f03663ca47b59e0601c58a112c2056"
+    },
+    "started_at": "2026-10-29T07:05:02.910388+00:00",
+    "status": "AC",
+    "anonymous": true,
+    "id": 413905,
+    "url": "https://judge.yosupo.jp/submission/413905",
+    "source_verified": true,
+    "overview": {
+      "id": 413905,
+      "is_latest": true,
+      "lang": "cpp17",
+      "memory": 3321856,
+      "problem_name": "composition_of_formal_power_series",
+      "problem_title": "Composition of Formal Power Series",
+      "status": "AC",
+      "submission_time": "2026-10-29T07:05:03.079319Z",
+      "time": 0.075
+    },
+    "checked_at": "2026-10-29T07:05:59.880681+00:00"
+  },
+  {
+    "key": "compositional_inverse",
+    "problem": "compositional_inverse_of_formal_power_series",
+    "lang": "cpp17",
+    "functions": [
+      "fps_compositional_inverse",
+      "fps_power_projection"
+    ],
+    "source": "submissions/compositional_inverse.cpp",
+    "source_sha256": "acea84685739cb94f5d0be8e7d39ef75d8e6d7aa476699542ac36030555de9e5",
+    "libraries": {
+      "fps-composition.cpp": "7febf7325b9c090d33f7cde54ddc6c4f252189d843dc2461f9188bc45d045dd9",
+      "formal-power-series.cpp": "77d3c79fdd0122a18ff26743431401ea01f03663ca47b59e0601c58a112c2056"
+    },
+    "started_at": "2026-10-29T07:05:42.155564+00:00",
+    "status": "AC",
+    "anonymous": true,
+    "id": 413906,
+    "url": "https://judge.yosupo.jp/submission/413906",
+    "source_verified": true,
+    "overview": {
+      "id": 413906,
+      "is_latest": true,
+      "lang": "cpp17",
+      "memory": 1916928,
+      "problem_name": "compositional_inverse_of_formal_power_series",
+      "problem_title": "Compositional Inverse of Formal Power Series",
+      "status": "AC",
+      "submission_time": "2026-10-29T07:05:42.338086Z",
+      "time": 0.063
+    },
+    "checked_at": "2026-10-29T07:06:22.950776+00:00"
+  },
+  {
+    "key": "composition_large",
+    "problem": "composition_of_formal_power_series_large",
+    "lang": "cpp17",
+    "functions": [
+      "fps_compose"
+    ],
+    "source": "submissions/composition_large.cpp",
+    "source_sha256": "9d17647b5f5ce5cce7fdaf5823629265d48ef1b341682cd4ce4d1530b4d37fcc",
+    "libraries": {
+      "fps-composition.cpp": "7febf7325b9c090d33f7cde54ddc6c4f252189d843dc2461f9188bc45d045dd9",
+      "formal-power-series.cpp": "77d3c79fdd0122a18ff26743431401ea01f03663ca47b59e0601c58a112c2056"
+    },
+    "started_at": "2026-10-29T07:06:05.116359+00:00",
+    "status": "AC",
+    "anonymous": true,
+    "id": 413907,
+    "url": "https://judge.yosupo.jp/submission/413907",
+    "source_verified": true,
+    "overview": {
+      "id": 413907,
+      "is_latest": true,
+      "lang": "cpp17",
+      "memory": 46522368,
+      "problem_name": "composition_of_formal_power_series_large",
+      "problem_title": "Composition of Formal Power Series (Large)",
+      "status": "AC",
+      "submission_time": "2026-10-29T07:06:05.331891Z",
+      "time": 1.763
+    },
+    "checked_at": "2026-10-29T07:07:13.058343+00:00"
+  },
+  {
+    "key": "compositional_inverse_large",
+    "problem": "compositional_inverse_of_formal_power_series_large",
+    "lang": "cpp17",
+    "functions": [
+      "fps_compositional_inverse",
+      "fps_power_projection"
+    ],
+    "source": "submissions/compositional_inverse_large.cpp",
+    "source_sha256": "acea84685739cb94f5d0be8e7d39ef75d8e6d7aa476699542ac36030555de9e5",
+    "libraries": {
+      "fps-composition.cpp": "7febf7325b9c090d33f7cde54ddc6c4f252189d843dc2461f9188bc45d045dd9",
+      "formal-power-series.cpp": "77d3c79fdd0122a18ff26743431401ea01f03663ca47b59e0601c58a112c2056"
+    },
+    "started_at": "2026-10-29T07:06:28.151964+00:00",
+    "status": "AC",
+    "anonymous": true,
+    "id": 413908,
+    "url": "https://judge.yosupo.jp/submission/413908",
+    "source_verified": true,
+    "overview": {
+      "id": 413908,
+      "is_latest": true,
+      "lang": "cpp17",
+      "memory": 18223104,
+      "problem_name": "compositional_inverse_of_formal_power_series_large",
+      "problem_title": "Compositional Inverse of Formal Power Series (Large)",
+      "status": "AC",
+      "submission_time": "2026-10-29T07:06:28.422709Z",
+      "time": 1.407
+    },
+    "checked_at": "2026-10-29T07:07:46.863714+00:00"
+  },
+  {
+    "key": "convolution_998244353",
+    "problem": "convolution_mod",
+    "lang": "cpp17",
+    "functions": [
+      "operator*"
+    ],
+    "source": "submissions/convolution_998244353.cpp",
+    "source_sha256": "93b70a02fb411cc4a5a3d9d6a475ce4dc44852734d57e87a86a9cf9899e4116e",
+    "libraries": {
+      "formal-power-series.cpp": "77d3c79fdd0122a18ff26743431401ea01f03663ca47b59e0601c58a112c2056"
+    },
+    "started_at": "2026-10-29T07:07:18.273209+00:00",
+    "status": "AC",
+    "anonymous": true,
+    "id": 413909,
+    "url": "https://judge.yosupo.jp/submission/413909",
+    "source_verified": true,
+    "overview": {
+      "id": 413909,
+      "is_latest": true,
+      "lang": "cpp17",
+      "memory": 23867392,
+      "problem_name": "convolution_mod",
+      "problem_title": "Convolution",
+      "status": "AC",
+      "submission_time": "2026-10-29T07:07:18.451493Z",
+      "time": 0.16
+    },
+    "checked_at": "2026-10-29T07:08:36.719255+00:00"
+  },
+  {
+    "key": "convolution_1000000007",
+    "problem": "convolution_mod_1000000007",
+    "lang": "cpp17",
+    "functions": [
+      "operator*"
+    ],
+    "source": "submissions/convolution_1000000007.cpp",
+    "source_sha256": "08d21c3dd8b2079e2860a5b0df2669f5fa676aa72a39cfe31d83d54c5cf056a2",
+    "libraries": {
+      "formal-power-series.cpp": "77d3c79fdd0122a18ff26743431401ea01f03663ca47b59e0601c58a112c2056"
+    },
+    "started_at": "2026-10-29T07:07:52.049344+00:00",
+    "status": "AC",
+    "anonymous": true,
+    "id": 413910,
+    "url": "https://judge.yosupo.jp/submission/413910",
+    "source_verified": true,
+    "overview": {
+      "id": 413910,
+      "is_latest": true,
+      "lang": "cpp17",
+      "memory": 32432128,
+      "problem_name": "convolution_mod_1000000007",
+      "problem_title": "Convolution (Mod 1,000,000,007)",
+      "status": "AC",
+      "submission_time": "2026-10-29T07:07:52.234704Z",
+      "time": 0.288
+    },
+    "checked_at": "2026-10-29T07:11:13.807022+00:00"
+  },
+  {
+    "key": "inv",
+    "problem": "inv_of_formal_power_series",
+    "lang": "cpp17",
+    "functions": [
+      "f.inv(n)"
+    ],
+    "source": "submissions/inv.cpp",
+    "source_sha256": "f3bf165d79e4b6bc2b2215d0d661cb7a2ca96ee9233b7e33a05a4dc82124b148",
+    "libraries": {
+      "formal-power-series.cpp": "c419994faad2d01f965bad1e57c8521fea84580e50ca656375eb505484592c84"
+    },
+    "started_at": "2026-10-29T07:11:12.289213+00:00",
+    "status": "AC",
+    "anonymous": true,
+    "id": 413911,
+    "url": "https://judge.yosupo.jp/submission/413911",
+    "source_verified": true,
+    "overview": {
+      "id": 413911,
+      "is_latest": true,
+      "lang": "cpp17",
+      "memory": 22503424,
+      "problem_name": "inv_of_formal_power_series",
+      "problem_title": "Inv of Formal Power Series",
+      "status": "AC",
+      "submission_time": "2026-10-29T07:11:12.598959Z",
+      "time": 0.268
+    },
+    "checked_at": "2026-10-29T07:11:47.981473+00:00"
+  },
+  {
+    "key": "inv_sparse",
+    "problem": "inv_of_formal_power_series_sparse",
+    "lang": "cpp17",
+    "functions": [
+      "fps_inv_sparse(f,n)"
+    ],
+    "source": "submissions/inv_sparse.cpp",
+    "source_sha256": "19f69e19ae95bc2826cc9dac98c27aa9615dacef641790765222e4d6101faf4a",
+    "libraries": {
+      "fps-sparse.cpp": "34749055a0f51a8ee23532e2bd745dd33eec4a9b259240cc68eea858fcdf6f39",
+      "fps-sqrt.cpp": "fa120551149a2fc7af467ded0a03c06677378e604b24b546c932852313cb630f",
+      "formal-power-series.cpp": "c419994faad2d01f965bad1e57c8521fea84580e50ca656375eb505484592c84"
+    },
+    "started_at": "2026-10-29T07:11:18.998999+00:00",
+    "status": "AC",
+    "anonymous": true,
+    "id": 413912,
+    "url": "https://judge.yosupo.jp/submission/413912",
+    "source_verified": true,
+    "overview": {
+      "id": 413912,
+      "is_latest": true,
+      "lang": "cpp17",
+      "memory": 14692352,
+      "problem_name": "inv_of_formal_power_series_sparse",
+      "problem_title": "Inv of Formal Power Series (Sparse)",
+      "status": "AC",
+      "submission_time": "2026-10-29T07:11:19.199098Z",
+      "time": 0.071
+    },
+    "checked_at": "2026-10-29T07:12:06.050165+00:00"
+  },
+  {
+    "key": "log",
+    "problem": "log_of_formal_power_series",
+    "lang": "cpp17",
+    "functions": [
+      "f.log(n)"
+    ],
+    "source": "submissions/log.cpp",
+    "source_sha256": "77220538503eb2dec4bbb32da9c1a55a5c2faf099c8ab16d977fae5e7ff9ac5f",
+    "libraries": {
+      "formal-power-series.cpp": "c419994faad2d01f965bad1e57c8521fea84580e50ca656375eb505484592c84"
+    },
+    "started_at": "2026-10-29T07:11:53.514687+00:00",
+    "status": "AC",
+    "anonymous": true,
+    "id": 413913,
+    "url": "https://judge.yosupo.jp/submission/413913",
+    "source_verified": true,
+    "overview": {
+      "id": 413913,
+      "is_latest": true,
+      "lang": "cpp17",
+      "memory": 24170496,
+      "problem_name": "log_of_formal_power_series",
+      "problem_title": "Log of Formal Power Series",
+      "status": "AC",
+      "submission_time": "2026-10-29T07:11:53.689838Z",
+      "time": 0.342
+    },
+    "checked_at": "2026-10-29T07:12:29.227323+00:00"
+  },
+  {
+    "key": "log_sparse",
+    "problem": "log_of_formal_power_series_sparse",
+    "lang": "cpp17",
+    "functions": [
+      "fps_log_sparse(f,n)"
+    ],
+    "source": "submissions/log_sparse.cpp",
+    "source_sha256": "3d4785bdd42975c841d6dfa39fe76f026ff94f1eac5b37a54940cd6a38482f32",
+    "libraries": {
+      "fps-sparse.cpp": "34749055a0f51a8ee23532e2bd745dd33eec4a9b259240cc68eea858fcdf6f39",
+      "fps-sqrt.cpp": "fa120551149a2fc7af467ded0a03c06677378e604b24b546c932852313cb630f",
+      "formal-power-series.cpp": "c419994faad2d01f965bad1e57c8521fea84580e50ca656375eb505484592c84"
+    },
+    "started_at": "2026-10-29T07:12:11.342395+00:00",
+    "status": "AC",
+    "anonymous": true,
+    "id": 413914,
+    "url": "https://judge.yosupo.jp/submission/413914",
+    "source_verified": true,
+    "overview": {
+      "id": 413914,
+      "is_latest": true,
+      "lang": "cpp17",
+      "memory": 14589952,
+      "problem_name": "log_of_formal_power_series_sparse",
+      "problem_title": "Log of Formal Power Series (Sparse)",
+      "status": "AC",
+      "submission_time": "2026-10-29T07:12:11.522845Z",
+      "time": 0.079
+    },
+    "checked_at": "2026-10-29T07:12:52.387024+00:00"
+  },
+  {
+    "key": "exp",
+    "problem": "exp_of_formal_power_series",
+    "lang": "cpp17",
+    "functions": [
+      "f.exp(n)"
+    ],
+    "source": "submissions/exp.cpp",
+    "source_sha256": "ddd4c7a9032ae2acd0814a1eedd2aa4fb305b4018a447c734f5a624fb9f12f35",
+    "libraries": {
+      "formal-power-series.cpp": "c419994faad2d01f965bad1e57c8521fea84580e50ca656375eb505484592c84"
+    },
+    "started_at": "2026-10-29T07:12:34.437851+00:00",
+    "status": "AC",
+    "anonymous": true,
+    "id": 413915,
+    "url": "https://judge.yosupo.jp/submission/413915",
+    "source_verified": true,
+    "overview": {
+      "id": 413915,
+      "is_latest": true,
+      "lang": "cpp17",
+      "memory": 28233728,
+      "problem_name": "exp_of_formal_power_series",
+      "problem_title": "Exp of Formal Power Series",
+      "status": "AC",
+      "submission_time": "2026-10-29T07:12:34.584339Z",
+      "time": 0.719
+    },
+    "checked_at": "2026-10-29T07:13:26.255437+00:00"
+  },
+  {
+    "key": "exp_sparse",
+    "problem": "exp_of_formal_power_series_sparse",
+    "lang": "cpp17",
+    "functions": [
+      "fps_exp_sparse(f,n)"
+    ],
+    "source": "submissions/exp_sparse.cpp",
+    "source_sha256": "d87f8667058677582ce089d8d218015a4eee7c81d3b842708a599e9d8bd59a96",
+    "libraries": {
+      "fps-sparse.cpp": "34749055a0f51a8ee23532e2bd745dd33eec4a9b259240cc68eea858fcdf6f39",
+      "fps-sqrt.cpp": "fa120551149a2fc7af467ded0a03c06677378e604b24b546c932852313cb630f",
+      "formal-power-series.cpp": "c419994faad2d01f965bad1e57c8521fea84580e50ca656375eb505484592c84"
+    },
+    "started_at": "2026-10-29T07:12:57.598402+00:00",
+    "status": "AC",
+    "anonymous": true,
+    "id": 413916,
+    "url": "https://judge.yosupo.jp/submission/413916",
+    "source_verified": true,
+    "overview": {
+      "id": 413916,
+      "is_latest": true,
+      "lang": "cpp17",
+      "memory": 14651392,
+      "problem_name": "exp_of_formal_power_series_sparse",
+      "problem_title": "Exp of Formal Power Series (Sparse)",
+      "status": "AC",
+      "submission_time": "2026-10-29T07:12:57.764231Z",
+      "time": 0.089
+    },
+    "checked_at": "2026-10-29T07:13:49.234040+00:00"
+  },
+  {
+    "key": "pow",
+    "problem": "pow_of_formal_power_series",
+    "lang": "cpp17",
+    "functions": [
+      "f.pow(k,n)"
+    ],
+    "source": "submissions/pow.cpp",
+    "source_sha256": "e0e31c76ff8d70dc7c8ffca39cfc198225ee2fc7126e2b233249569e55170f11",
+    "libraries": {
+      "formal-power-series.cpp": "c419994faad2d01f965bad1e57c8521fea84580e50ca656375eb505484592c84"
+    },
+    "started_at": "2026-10-29T07:13:31.484487+00:00",
+    "status": "AC",
+    "anonymous": true,
+    "id": 413917,
+    "url": "https://judge.yosupo.jp/submission/413917",
+    "source_verified": true,
+    "overview": {
+      "id": 413917,
+      "is_latest": true,
+      "lang": "cpp17",
+      "memory": 39243776,
+      "problem_name": "pow_of_formal_power_series",
+      "problem_title": "Pow of Formal Power Series",
+      "status": "AC",
+      "submission_time": "2026-10-29T07:13:31.712164Z",
+      "time": 0.97
+    },
+    "checked_at": "2026-10-29T07:14:33.861445+00:00"
+  },
+  {
+    "key": "pow_sparse",
+    "problem": "pow_of_formal_power_series_sparse",
+    "lang": "cpp17",
+    "functions": [
+      "fps_pow_sparse(f,exponent,n)"
+    ],
+    "source": "submissions/pow_sparse.cpp",
+    "source_sha256": "9981602965feb5258d8ed8c70b43dd26022e575d9d4f8b05f2231810dcad3a21",
+    "libraries": {
+      "fps-sparse.cpp": "34749055a0f51a8ee23532e2bd745dd33eec4a9b259240cc68eea858fcdf6f39",
+      "fps-sqrt.cpp": "fa120551149a2fc7af467ded0a03c06677378e604b24b546c932852313cb630f",
+      "formal-power-series.cpp": "c419994faad2d01f965bad1e57c8521fea84580e50ca656375eb505484592c84"
+    },
+    "started_at": "2026-10-29T07:13:54.432977+00:00",
+    "status": "AC",
+    "anonymous": true,
+    "id": 413918,
+    "url": "https://judge.yosupo.jp/submission/413918",
+    "source_verified": true,
+    "overview": {
+      "id": 413918,
+      "is_latest": true,
+      "lang": "cpp17",
+      "memory": 22736896,
+      "problem_name": "pow_of_formal_power_series_sparse",
+      "problem_title": "Pow of Formal Power Series (Sparse)",
+      "status": "AC",
+      "submission_time": "2026-10-29T07:13:54.636378Z",
+      "time": 0.102
+    },
+    "checked_at": "2026-10-29T07:15:02.132591+00:00"
+  },
+  {
+    "key": "sqrt",
+    "problem": "sqrt_of_formal_power_series",
+    "lang": "cpp17",
+    "functions": [
+      "fps_sqrt(f,n)"
+    ],
+    "source": "submissions/sqrt.cpp",
+    "source_sha256": "b436bfc336fd2de99705ad08b9472ba244f0a31196e0a0782836c662aa08d831",
+    "libraries": {
+      "fps-sqrt.cpp": "fa120551149a2fc7af467ded0a03c06677378e604b24b546c932852313cb630f",
+      "formal-power-series.cpp": "c419994faad2d01f965bad1e57c8521fea84580e50ca656375eb505484592c84"
+    },
+    "started_at": "2026-10-29T07:14:39.054726+00:00",
+    "status": "AC",
+    "anonymous": true,
+    "id": 413919,
+    "url": "https://judge.yosupo.jp/submission/413919",
+    "source_verified": true,
+    "overview": {
+      "id": 413919,
+      "is_latest": true,
+      "lang": "cpp17",
+      "memory": 27475968,
+      "problem_name": "sqrt_of_formal_power_series",
+      "problem_title": "Sqrt of Formal Power Series",
+      "status": "AC",
+      "submission_time": "2026-10-29T07:14:39.212486Z",
+      "time": 0.582
+    },
+    "checked_at": "2026-10-29T07:15:35.883982+00:00"
+  },
+  {
+    "key": "sqrt_sparse",
+    "problem": "sqrt_of_formal_power_series_sparse",
+    "lang": "cpp17",
+    "functions": [
+      "fps_sqrt_sparse(f,n)"
+    ],
+    "source": "submissions/sqrt_sparse.cpp",
+    "source_sha256": "a9946f7c2318724639b13b96c6ead00b2737dace871c262de33e49265403167a",
+    "libraries": {
+      "fps-sparse.cpp": "34749055a0f51a8ee23532e2bd745dd33eec4a9b259240cc68eea858fcdf6f39",
+      "fps-sqrt.cpp": "fa120551149a2fc7af467ded0a03c06677378e604b24b546c932852313cb630f",
+      "formal-power-series.cpp": "c419994faad2d01f965bad1e57c8521fea84580e50ca656375eb505484592c84"
+    },
+    "started_at": "2026-10-29T07:15:07.327271+00:00",
+    "status": "AC",
+    "anonymous": true,
+    "id": 413920,
+    "url": "https://judge.yosupo.jp/submission/413920",
+    "source_verified": true,
+    "overview": {
+      "id": 413920,
+      "is_latest": true,
+      "lang": "cpp17",
+      "memory": 22667264,
+      "problem_name": "sqrt_of_formal_power_series_sparse",
+      "problem_title": "Sqrt of Formal Power Series (Sparse)",
+      "status": "AC",
+      "submission_time": "2026-10-29T07:15:07.492239Z",
+      "time": 0.128
+    },
+    "checked_at": "2026-10-29T07:16:15.080728+00:00"
+  },
+  {
+    "key": "composition",
+    "problem": "composition_of_formal_power_series",
+    "lang": "cpp17",
+    "functions": [
+      "fps_compose"
+    ],
+    "source": "submissions/composition.cpp",
+    "source_sha256": "d644e44c97044ac4b22371638430b4baa918e80a8cd89711d265dcdd718b5e54",
+    "libraries": {
+      "fps-composition.cpp": "7febf7325b9c090d33f7cde54ddc6c4f252189d843dc2461f9188bc45d045dd9",
+      "formal-power-series.cpp": "c419994faad2d01f965bad1e57c8521fea84580e50ca656375eb505484592c84"
+    },
+    "started_at": "2026-10-29T07:15:41.103725+00:00",
+    "status": "AC",
+    "anonymous": true,
+    "id": 413921,
+    "url": "https://judge.yosupo.jp/submission/413921",
+    "source_verified": true,
+    "overview": {
+      "id": 413921,
+      "is_latest": true,
+      "lang": "cpp17",
+      "memory": 3342336,
+      "problem_name": "composition_of_formal_power_series",
+      "problem_title": "Composition of Formal Power Series",
+      "status": "AC",
+      "submission_time": "2026-10-29T07:15:41.260376Z",
+      "time": 0.075
+    },
+    "checked_at": "2026-10-29T07:16:32.617366+00:00"
+  },
+  {
+    "key": "compositional_inverse",
+    "problem": "compositional_inverse_of_formal_power_series",
+    "lang": "cpp17",
+    "functions": [
+      "fps_compositional_inverse",
+      "fps_power_projection"
+    ],
+    "source": "submissions/compositional_inverse.cpp",
+    "source_sha256": "af13d9a634518d527efe2b04f457fa575554ed1bd638c5f30ae3cca129d1c01e",
+    "libraries": {
+      "fps-composition.cpp": "7febf7325b9c090d33f7cde54ddc6c4f252189d843dc2461f9188bc45d045dd9",
+      "formal-power-series.cpp": "c419994faad2d01f965bad1e57c8521fea84580e50ca656375eb505484592c84"
+    },
+    "started_at": "2026-10-29T07:16:20.307025+00:00",
+    "status": "AC",
+    "anonymous": true,
+    "id": 413922,
+    "url": "https://judge.yosupo.jp/submission/413922",
+    "source_verified": true,
+    "overview": {
+      "id": 413922,
+      "is_latest": true,
+      "lang": "cpp17",
+      "memory": 1916928,
+      "problem_name": "compositional_inverse_of_formal_power_series",
+      "problem_title": "Compositional Inverse of Formal Power Series",
+      "status": "AC",
+      "submission_time": "2026-10-29T07:16:20.460462Z",
+      "time": 0.056
+    },
+    "checked_at": "2026-10-29T07:16:55.524960+00:00"
+  },
+  {
+    "key": "composition_large",
+    "problem": "composition_of_formal_power_series_large",
+    "lang": "cpp17",
+    "functions": [
+      "fps_compose"
+    ],
+    "source": "submissions/composition_large.cpp",
+    "source_sha256": "d644e44c97044ac4b22371638430b4baa918e80a8cd89711d265dcdd718b5e54",
+    "libraries": {
+      "fps-composition.cpp": "7febf7325b9c090d33f7cde54ddc6c4f252189d843dc2461f9188bc45d045dd9",
+      "formal-power-series.cpp": "c419994faad2d01f965bad1e57c8521fea84580e50ca656375eb505484592c84"
+    },
+    "started_at": "2026-10-29T07:16:37.827885+00:00",
+    "status": "AC",
+    "anonymous": true,
+    "id": 413923,
+    "url": "https://judge.yosupo.jp/submission/413923",
+    "source_verified": true,
+    "overview": {
+      "id": 413923,
+      "is_latest": true,
+      "lang": "cpp17",
+      "memory": 46489600,
+      "problem_name": "composition_of_formal_power_series_large",
+      "problem_title": "Composition of Formal Power Series (Large)",
+      "status": "AC",
+      "submission_time": "2026-10-29T07:16:37.977048Z",
+      "time": 1.778
+    },
+    "checked_at": "2026-10-29T07:17:45.568982+00:00"
+  },
+  {
+    "key": "compositional_inverse_large",
+    "problem": "compositional_inverse_of_formal_power_series_large",
+    "lang": "cpp17",
+    "functions": [
+      "fps_compositional_inverse",
+      "fps_power_projection"
+    ],
+    "source": "submissions/compositional_inverse_large.cpp",
+    "source_sha256": "af13d9a634518d527efe2b04f457fa575554ed1bd638c5f30ae3cca129d1c01e",
+    "libraries": {
+      "fps-composition.cpp": "7febf7325b9c090d33f7cde54ddc6c4f252189d843dc2461f9188bc45d045dd9",
+      "formal-power-series.cpp": "c419994faad2d01f965bad1e57c8521fea84580e50ca656375eb505484592c84"
+    },
+    "started_at": "2026-10-29T07:17:00.740021+00:00",
+    "status": "AC",
+    "anonymous": true,
+    "id": 413924,
+    "url": "https://judge.yosupo.jp/submission/413924",
+    "source_verified": true,
+    "overview": {
+      "id": 413924,
+      "is_latest": true,
+      "lang": "cpp17",
+      "memory": 18223104,
+      "problem_name": "compositional_inverse_of_formal_power_series_large",
+      "problem_title": "Compositional Inverse of Formal Power Series (Large)",
+      "status": "AC",
+      "submission_time": "2026-10-29T07:17:00.913917Z",
+      "time": 1.418
+    },
+    "checked_at": "2026-10-29T07:18:24.719238+00:00"
+  },
+  {
+    "key": "convolution_998244353",
+    "problem": "convolution_mod",
+    "lang": "cpp17",
+    "functions": [
+      "operator*"
+    ],
+    "source": "submissions/convolution_998244353.cpp",
+    "source_sha256": "02f4b7be36bbc472331683982c5a217a585e92eeffe758f88f83035c47f46ab0",
+    "libraries": {
+      "formal-power-series.cpp": "c419994faad2d01f965bad1e57c8521fea84580e50ca656375eb505484592c84"
+    },
+    "started_at": "2026-10-29T07:17:50.784789+00:00",
+    "status": "AC",
+    "anonymous": true,
+    "id": 413925,
+    "url": "https://judge.yosupo.jp/submission/413925",
+    "source_verified": true,
+    "overview": {
+      "id": 413925,
+      "is_latest": true,
+      "lang": "cpp17",
+      "memory": 23883776,
+      "problem_name": "convolution_mod",
+      "problem_title": "Convolution",
+      "status": "AC",
+      "submission_time": "2026-10-29T07:17:50.950915Z",
+      "time": 0.161
+    },
+    "checked_at": "2026-10-29T07:19:14.625281+00:00"
+  },
+  {
+    "key": "convolution_1000000007",
+    "problem": "convolution_mod_1000000007",
+    "lang": "cpp17",
+    "functions": [
+      "operator*"
+    ],
+    "source": "submissions/convolution_1000000007.cpp",
+    "source_sha256": "c588aedb4e6cb8092acd200ec67efc358e040f01e0531b55a1b37c12b1900230",
+    "libraries": {
+      "formal-power-series.cpp": "c419994faad2d01f965bad1e57c8521fea84580e50ca656375eb505484592c84"
+    },
+    "started_at": "2026-10-29T07:18:29.938183+00:00",
+    "status": "AC",
+    "anonymous": true,
+    "id": 413926,
+    "url": "https://judge.yosupo.jp/submission/413926",
+    "source_verified": true,
+    "overview": {
+      "id": 413926,
+      "is_latest": true,
+      "lang": "cpp17",
+      "memory": 32436224,
+      "problem_name": "convolution_mod_1000000007",
+      "problem_title": "Convolution (Mod 1,000,000,007)",
+      "status": "AC",
+      "submission_time": "2026-10-29T07:18:30.095156Z",
+      "time": 0.294
+    },
+    "checked_at": "2026-10-29T07:20:04.536981+00:00"
+  },
+  {
+    "key": "division",
+    "problem": "division_of_polynomials",
+    "lang": "cpp17",
+    "functions": [
+      "operator/",
+      "operator%"
+    ],
+    "source": "submissions/division.cpp",
+    "source_sha256": "65fdc30cb63f804a64c7c44db173650e0ee7366c37f9f946d7c5fda7f9c3da82",
+    "libraries": {
+      "formal-power-series.cpp": "c419994faad2d01f965bad1e57c8521fea84580e50ca656375eb505484592c84"
+    },
+    "started_at": "2026-10-29T07:19:19.828168+00:00",
+    "status": "AC",
+    "anonymous": true,
+    "id": 413928,
+    "url": "https://judge.yosupo.jp/submission/413928",
+    "source_verified": true,
+    "overview": {
+      "id": 413928,
+      "is_latest": true,
+      "lang": "cpp17",
+      "memory": 28377088,
+      "problem_name": "division_of_polynomials",
+      "problem_title": "Division of Polynomials",
+      "status": "AC",
+      "submission_time": "2026-10-29T07:19:19.998613Z",
+      "time": 0.643
+    },
+    "checked_at": "2026-10-29T07:21:06.790904+00:00"
+  },
+  {
+    "key": "polynomial_inverse",
+    "problem": "inv_of_polynomials",
+    "lang": "cpp17",
+    "functions": [
+      "polynomial_mod_inverse",
+      "polynomial_extgcd",
+      "half-GCD"
+    ],
+    "source": "submissions/polynomial_inverse.cpp",
+    "source_sha256": "2acab25942934639ee525e80fde13ca5f9458caa71728bca0e39bca8bd709bb0",
+    "libraries": {
+      "polynomial-gcd.cpp": "68d3f92fb31fd6a7ea11efaee84ecd516e9529a8b08cce8d6f47a061174e4c3f",
+      "formal-power-series.cpp": "c419994faad2d01f965bad1e57c8521fea84580e50ca656375eb505484592c84"
+    },
+    "started_at": "2026-10-29T07:20:09.745298+00:00",
+    "status": "AC",
+    "anonymous": true,
+    "id": 413930,
+    "url": "https://judge.yosupo.jp/submission/413930",
+    "source_verified": true,
+    "overview": {
+      "id": 413930,
+      "is_latest": true,
+      "lang": "cpp17",
+      "memory": 6131712,
+      "problem_name": "inv_of_polynomials",
+      "problem_title": "Inv of Polynomials",
+      "status": "AC",
+      "submission_time": "2026-10-29T07:20:09.893777Z",
+      "time": 0.638
+    },
+    "checked_at": "2026-10-29T07:21:46.252308+00:00"
+  },
+  {
+    "key": "multipoint",
+    "problem": "multipoint_evaluation",
+    "lang": "cpp17",
+    "functions": [
+      "MultipointEvaluation"
+    ],
+    "source": "submissions/multipoint.cpp",
+    "source_sha256": "e8b1f2f1142a35576a5171b987d283152fd46eb98feb138a38e5faf09de51650",
+    "libraries": {
+      "multipoint-evaluation.cpp": "1dfc38d3e3e6b9bef3fd7b2cfbbae4bf49687f6e80a856f7fbd8e7dbfca15d12",
+      "formal-power-series.cpp": "c419994faad2d01f965bad1e57c8521fea84580e50ca656375eb505484592c84"
+    },
+    "started_at": "2026-10-29T07:21:11.983664+00:00",
+    "status": "AC",
+    "anonymous": true,
+    "id": 413932,
+    "url": "https://judge.yosupo.jp/submission/413932",
+    "source_verified": true,
+    "overview": {
+      "id": 413932,
+      "is_latest": true,
+      "lang": "cpp17",
+      "memory": 32120832,
+      "problem_name": "multipoint_evaluation",
+      "problem_title": "Multipoint Evaluation",
+      "status": "AC",
+      "submission_time": "2026-10-29T07:21:12.159444Z",
+      "time": 0.764
+    },
+    "checked_at": "2026-10-29T07:22:42.050677+00:00"
+  },
+  {
+    "key": "interpolation",
+    "problem": "polynomial_interpolation",
+    "lang": "cpp17",
+    "functions": [
+      "polynomial_interpolation"
+    ],
+    "source": "submissions/interpolation.cpp",
+    "source_sha256": "c0c13f8a0d87c4051042d1126da1150b17e261459014833f1dae6b2644dcb220",
+    "libraries": {
+      "polynomial-interpolation.cpp": "31e984762ba206b807d31f4353517d7a069f738ac678b4ac79ee17b7e3064eba",
+      "multipoint-evaluation.cpp": "1dfc38d3e3e6b9bef3fd7b2cfbbae4bf49687f6e80a856f7fbd8e7dbfca15d12",
+      "formal-power-series.cpp": "c419994faad2d01f965bad1e57c8521fea84580e50ca656375eb505484592c84"
+    },
+    "started_at": "2026-10-29T07:21:51.558556+00:00",
+    "status": "AC",
+    "anonymous": true,
+    "id": 413933,
+    "url": "https://judge.yosupo.jp/submission/413933",
+    "source_verified": true,
+    "overview": {
+      "id": 413933,
+      "is_latest": true,
+      "lang": "cpp17",
+      "memory": 50786304,
+      "problem_name": "polynomial_interpolation",
+      "problem_title": "Polynomial Interpolation",
+      "status": "AC",
+      "submission_time": "2026-10-29T07:21:51.845999Z",
+      "time": 0.918
+    },
+    "checked_at": "2026-10-29T07:22:59.518692+00:00"
+  },
+  {
+    "key": "sampling_shift",
+    "problem": "shift_of_sampling_points_of_polynomial",
+    "lang": "cpp17",
+    "functions": [
+      "sampling_point_shift"
+    ],
+    "source": "submissions/sampling_shift.cpp",
+    "source_sha256": "536041303f246756acbd3463b4ca941fb98df03f3d2a2b302457c53f00561143",
+    "libraries": {
+      "sampling-point-shift.cpp": "e75abb35211855cd6c8332c9aba4b1a1ffec416bef71ceb0689c0e957f2e4b11",
+      "formal-power-series.cpp": "c419994faad2d01f965bad1e57c8521fea84580e50ca656375eb505484592c84"
+    },
+    "started_at": "2026-10-29T07:22:47.252986+00:00",
+    "status": "AC",
+    "anonymous": true,
+    "id": 413934,
+    "url": "https://judge.yosupo.jp/submission/413934",
+    "source_verified": true,
+    "overview": {
+      "id": 413934,
+      "is_latest": true,
+      "lang": "cpp17",
+      "memory": 38649856,
+      "problem_name": "shift_of_sampling_points_of_polynomial",
+      "problem_title": "Shift of Sampling Points of Polynomial",
+      "status": "AC",
+      "submission_time": "2026-10-29T07:22:47.401938Z",
+      "time": 0.209
+    },
+    "checked_at": "2026-10-29T07:23:33.338732+00:00"
+  },
+  {
+    "key": "bernoulli",
+    "problem": "bernoulli_number",
+    "lang": "cpp17",
+    "functions": [
+      "bernoulli_numbers"
+    ],
+    "source": "submissions/bernoulli.cpp",
+    "source_sha256": "ea190666d793d82d40c25623592c4e1a6cf2abf0ab5e1f81a5ced5ce8281d077",
+    "libraries": {
+      "faulhaber.cpp": "cd77500c6dcb1cb2a476fee1ab5447bf6362b99b5b5f70855c4afeb04bedab17",
+      "formal-power-series.cpp": "c419994faad2d01f965bad1e57c8521fea84580e50ca656375eb505484592c84"
+    },
+    "started_at": "2026-10-29T07:23:04.722519+00:00",
+    "status": "AC",
+    "anonymous": true,
+    "id": 413936,
+    "url": "https://judge.yosupo.jp/submission/413936",
+    "source_verified": true,
+    "overview": {
+      "id": 413936,
+      "is_latest": true,
+      "lang": "cpp17",
+      "memory": 26562560,
+      "problem_name": "bernoulli_number",
+      "problem_title": "Bernoulli Number",
+      "status": "AC",
+      "submission_time": "2026-10-29T07:23:04.872226Z",
+      "time": 0.248
+    },
+    "checked_at": "2026-10-29T07:24:39.701208+00:00"
+  },
+  {
+    "key": "prefix_exclusive",
+    "problem": "prefix_sum_of_polynomial",
+    "lang": "cpp17",
+    "functions": [
+      "prefix_sum_polynomial_exclusive"
+    ],
+    "source": "submissions/prefix_exclusive.cpp",
+    "source_sha256": "62bb81b8e1fafa8e67da3be2ac80a539adf6853db902b2301ac86d426a0069cb",
+    "libraries": {
+      "prefix-sum-polynomial.cpp": "029efdf1f9cbfa3305d4ccf11ba5586c6256c20dfe1dc2d1397dde481ac4dd54",
+      "faulhaber.cpp": "cd77500c6dcb1cb2a476fee1ab5447bf6362b99b5b5f70855c4afeb04bedab17",
+      "formal-power-series.cpp": "c419994faad2d01f965bad1e57c8521fea84580e50ca656375eb505484592c84"
+    },
+    "started_at": "2026-10-29T07:23:38.528836+00:00",
+    "status": "AC",
+    "anonymous": true,
+    "id": 413937,
+    "url": "https://judge.yosupo.jp/submission/413937",
+    "source_verified": true,
+    "overview": {
+      "id": 413937,
+      "is_latest": true,
+      "lang": "cpp17",
+      "memory": 32419840,
+      "problem_name": "prefix_sum_of_polynomial",
+      "problem_title": "Prefix Sum of Polynomial",
+      "status": "AC",
+      "submission_time": "2026-10-29T07:23:38.684155Z",
+      "time": 0.341
+    },
+    "checked_at": "2026-10-29T07:25:02.626616+00:00"
+  },
+  {
+    "key": "prefix_inclusive",
+    "problem": "prefix_sum_of_polynomial",
+    "lang": "cpp17",
+    "functions": [
+      "prefix_sum_polynomial"
+    ],
+    "source": "submissions/prefix_inclusive.cpp",
+    "source_sha256": "3a1670f036d6223f7c13d41deb3c56e0c7e992c5769b85f14cbf5b9bae03bf6c",
+    "libraries": {
+      "prefix-sum-polynomial.cpp": "029efdf1f9cbfa3305d4ccf11ba5586c6256c20dfe1dc2d1397dde481ac4dd54",
+      "faulhaber.cpp": "cd77500c6dcb1cb2a476fee1ab5447bf6362b99b5b5f70855c4afeb04bedab17",
+      "formal-power-series.cpp": "c419994faad2d01f965bad1e57c8521fea84580e50ca656375eb505484592c84"
+    },
+    "started_at": "2026-10-29T07:24:44.892674+00:00",
+    "status": "AC",
+    "anonymous": true,
+    "id": 413938,
+    "url": "https://judge.yosupo.jp/submission/413938",
+    "source_verified": true,
+    "overview": {
+      "id": 413938,
+      "is_latest": true,
+      "lang": "cpp17",
+      "memory": 32382976,
+      "problem_name": "prefix_sum_of_polynomial",
+      "problem_title": "Prefix Sum of Polynomial",
+      "status": "AC",
+      "submission_time": "2026-10-29T07:24:45.049686Z",
+      "time": 0.35
+    },
+    "checked_at": "2026-10-29T07:25:25.448118+00:00"
+  },
+  {
+    "key": "mod_sqrt",
+    "problem": "sqrt_mod",
+    "lang": "cpp17",
+    "functions": [
+      "mod_sqrt"
+    ],
+    "source": "submissions/mod_sqrt.cpp",
+    "source_sha256": "85cc36c5ab91a799aee200345c2c954a68ef4c9a68c1b02fcb8ee815c55634c5",
+    "libraries": {
+      "fps-sqrt.cpp": "fa120551149a2fc7af467ded0a03c06677378e604b24b546c932852313cb630f",
+      "formal-power-series.cpp": "c419994faad2d01f965bad1e57c8521fea84580e50ca656375eb505484592c84"
+    },
+    "started_at": "2026-10-29T07:25:07.824324+00:00",
+    "status": "AC",
+    "anonymous": true,
+    "id": 413939,
+    "url": "https://judge.yosupo.jp/submission/413939",
+    "source_verified": true,
+    "overview": {
+      "id": 413939,
+      "is_latest": true,
+      "lang": "cpp17",
+      "memory": 1466368,
+      "problem_name": "sqrt_mod",
+      "problem_title": "Sqrt Mod",
+      "status": "AC",
+      "submission_time": "2026-10-29T07:25:07.976216Z",
+      "time": 0.065
+    },
+    "checked_at": "2026-10-29T07:25:37.477283+00:00"
+  },
+  {
+    "key": "relaxed",
+    "problem": "convolution_mod",
+    "lang": "cpp17",
+    "functions": [
+      "RelaxedMultiplication::append"
+    ],
+    "source": "submissions/relaxed.cpp",
+    "source_sha256": "9a838232f4674a41e4aa9c9b7305677177408e804dfd9cfbb18c91439d6b4507",
+    "libraries": {
+      "relaxed-multiplication.cpp": "d16a72ee75338260157c25e08cb60a1d642c2a3c0f476a63054784b5b32695d0",
+      "formal-power-series.cpp": "c419994faad2d01f965bad1e57c8521fea84580e50ca656375eb505484592c84"
+    },
+    "started_at": "2026-10-29T07:25:30.661567+00:00",
+    "status": "AC",
+    "anonymous": true,
+    "id": 413940,
+    "url": "https://judge.yosupo.jp/submission/413940",
+    "source_verified": true,
+    "overview": {
+      "id": 413940,
+      "is_latest": true,
+      "lang": "cpp17",
+      "memory": 40833024,
+      "problem_name": "convolution_mod",
+      "problem_title": "Convolution",
+      "status": "AC",
+      "submission_time": "2026-10-29T07:25:30.824921Z",
+      "time": 2.621
+    },
+    "checked_at": "2026-10-29T07:27:16.295206+00:00"
+  },
+  {
+    "key": "newton",
+    "problem": "inv_of_formal_power_series",
+    "lang": "cpp17",
+    "functions": [
+      "fps_newton"
+    ],
+    "source": "submissions/newton.cpp",
+    "source_sha256": "62cf68957197210eea6ed1ebf86a19d8e29ef728077d28396144220199bfcabf",
+    "libraries": {
+      "fps-newton.cpp": "e47b1d84ab447c258528bc2627d2ee5482305bc98a6f0c5e397e4ae43cc37c0b",
+      "formal-power-series.cpp": "c419994faad2d01f965bad1e57c8521fea84580e50ca656375eb505484592c84"
+    },
+    "started_at": "2026-10-29T07:25:42.659187+00:00",
+    "status": "AC",
+    "anonymous": true,
+    "id": 413941,
+    "url": "https://judge.yosupo.jp/submission/413941",
+    "source_verified": true,
+    "overview": {
+      "id": 413941,
+      "is_latest": true,
+      "lang": "cpp17",
+      "memory": 32403456,
+      "problem_name": "inv_of_formal_power_series",
+      "problem_title": "Inv of Formal Power Series",
+      "status": "AC",
+      "submission_time": "2026-10-29T07:25:42.80221Z",
+      "time": 0.697
+    },
+    "checked_at": "2026-10-29T07:27:50.516376+00:00"
+  },
+  {
+    "key": "pow_unit",
+    "problem": "sqrt_of_formal_power_series",
+    "lang": "cpp17",
+    "functions": [
+      "fps_pow_unit"
+    ],
+    "source": "submissions/pow_unit.cpp",
+    "source_sha256": "fe2fb0ca5244ffc1220865dbec0767fa741ed2d0b422695a921ac58bd113b287",
+    "libraries": {
+      "fps-all.cpp": "d7212e290dd9650de0596952aa53e7e8f90f7653835f3dd386e996133eb1446a",
+      "formal-power-series.cpp": "c419994faad2d01f965bad1e57c8521fea84580e50ca656375eb505484592c84",
+      "fps-newton.cpp": "e47b1d84ab447c258528bc2627d2ee5482305bc98a6f0c5e397e4ae43cc37c0b",
+      "fps-sqrt.cpp": "fa120551149a2fc7af467ded0a03c06677378e604b24b546c932852313cb630f",
+      "fps-sparse.cpp": "34749055a0f51a8ee23532e2bd745dd33eec4a9b259240cc68eea858fcdf6f39",
+      "fps-composition.cpp": "7febf7325b9c090d33f7cde54ddc6c4f252189d843dc2461f9188bc45d045dd9",
+      "polynomial-gcd.cpp": "68d3f92fb31fd6a7ea11efaee84ecd516e9529a8b08cce8d6f47a061174e4c3f",
+      "multipoint-evaluation.cpp": "1dfc38d3e3e6b9bef3fd7b2cfbbae4bf49687f6e80a856f7fbd8e7dbfca15d12",
+      "polynomial-interpolation.cpp": "31e984762ba206b807d31f4353517d7a069f738ac678b4ac79ee17b7e3064eba",
+      "sampling-point-shift.cpp": "e75abb35211855cd6c8332c9aba4b1a1ffec416bef71ceb0689c0e957f2e4b11",
+      "faulhaber.cpp": "cd77500c6dcb1cb2a476fee1ab5447bf6362b99b5b5f70855c4afeb04bedab17",
+      "prefix-sum-polynomial.cpp": "029efdf1f9cbfa3305d4ccf11ba5586c6256c20dfe1dc2d1397dde481ac4dd54",
+      "relaxed-multiplication.cpp": "d16a72ee75338260157c25e08cb60a1d642c2a3c0f476a63054784b5b32695d0"
+    },
+    "started_at": "2026-10-29T07:27:21.497751+00:00",
+    "status": "AC",
+    "anonymous": true,
+    "id": 413942,
+    "url": "https://judge.yosupo.jp/submission/413942",
+    "source_verified": true,
+    "overview": {
+      "id": 413942,
+      "is_latest": true,
+      "lang": "cpp17",
+      "memory": 35368960,
+      "problem_name": "sqrt_of_formal_power_series",
+      "problem_title": "Sqrt of Formal Power Series",
+      "status": "AC",
+      "submission_time": "2026-10-29T07:27:21.855636Z",
+      "time": 0.975
+    },
+    "checked_at": "2026-10-29T07:28:28.222627+00:00"
+  }
+]

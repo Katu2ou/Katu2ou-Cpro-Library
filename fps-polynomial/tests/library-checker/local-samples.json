@@ -1,0 +1,740 @@
+[
+  {
+    "key": "inv",
+    "problem": "inv_of_formal_power_series",
+    "source_sha256": "f3bf165d79e4b6bc2b2215d0d661cb7a2ca96ee9233b7e33a05a4dc82124b148",
+    "upstream_commit": "73876f1cbcf082d2b22722924b924d3d65a2f00e",
+    "mode": "samples",
+    "cases": [
+      {
+        "name": "example_00.in",
+        "status": "PASS",
+        "seconds": 0.15188195899827406,
+        "input_sha256": "5ac9dad8173c53309e4942866f855d01391fbf0b52ba0380dc0e5806d82365d5",
+        "returncode": 0,
+        "stderr": "",
+        "checker": "ok 5 tokens\n"
+      }
+    ]
+  },
+  {
+    "key": "inv_sparse",
+    "problem": "inv_of_formal_power_series_sparse",
+    "source_sha256": "19f69e19ae95bc2826cc9dac98c27aa9615dacef641790765222e4d6101faf4a",
+    "upstream_commit": "73876f1cbcf082d2b22722924b924d3d65a2f00e",
+    "mode": "samples",
+    "cases": [
+      {
+        "name": "example_00.in",
+        "status": "PASS",
+        "seconds": 0.13286291700205766,
+        "input_sha256": "248211b01ac26a0ae4d8d0cc195502b12f2ed1367047bea23a829cbf75f6022c",
+        "returncode": 0,
+        "stderr": "",
+        "checker": "ok 5 tokens\n"
+      },
+      {
+        "name": "example_01.in",
+        "status": "PASS",
+        "seconds": 0.012630042008822784,
+        "input_sha256": "b0a976d5660791450b15192a61baa0cb25661d433f0766d2671393e5f5f417e4",
+        "returncode": 0,
+        "stderr": "",
+        "checker": "ok 10 tokens\n"
+      }
+    ]
+  },
+  {
+    "key": "log",
+    "problem": "log_of_formal_power_series",
+    "source_sha256": "77220538503eb2dec4bbb32da9c1a55a5c2faf099c8ab16d977fae5e7ff9ac5f",
+    "upstream_commit": "73876f1cbcf082d2b22722924b924d3d65a2f00e",
+    "mode": "samples",
+    "cases": [
+      {
+        "name": "example_00.in",
+        "status": "PASS",
+        "seconds": 0.13551337498938665,
+        "input_sha256": "dce400e9fb4dc53a24b2cc1dfd56b7b35cd09362baac90269cd6f198e9efd502",
+        "returncode": 0,
+        "stderr": "",
+        "checker": "ok 5 tokens\n"
+      }
+    ]
+  },
+  {
+    "key": "log_sparse",
+    "problem": "log_of_formal_power_series_sparse",
+    "source_sha256": "3d4785bdd42975c841d6dfa39fe76f026ff94f1eac5b37a54940cd6a38482f32",
+    "upstream_commit": "73876f1cbcf082d2b22722924b924d3d65a2f00e",
+    "mode": "samples",
+    "cases": [
+      {
+        "name": "example_00.in",
+        "status": "PASS",
+        "seconds": 0.1340888749982696,
+        "input_sha256": "248211b01ac26a0ae4d8d0cc195502b12f2ed1367047bea23a829cbf75f6022c",
+        "returncode": 0,
+        "stderr": "",
+        "checker": "ok 5 tokens\n"
+      },
+      {
+        "name": "example_01.in",
+        "status": "PASS",
+        "seconds": 0.01315783298923634,
+        "input_sha256": "de9238b437df3fecdc46ff164d18bdce056095758c16f2a56c27279a615ef974",
+        "returncode": 0,
+        "stderr": "",
+        "checker": "ok 10 tokens\n"
+      }
+    ]
+  },
+  {
+    "key": "exp",
+    "problem": "exp_of_formal_power_series",
+    "source_sha256": "ddd4c7a9032ae2acd0814a1eedd2aa4fb305b4018a447c734f5a624fb9f12f35",
+    "upstream_commit": "73876f1cbcf082d2b22722924b924d3d65a2f00e",
+    "mode": "samples",
+    "cases": [
+      {
+        "name": "example_00.in",
+        "status": "PASS",
+        "seconds": 0.13575308298459277,
+        "input_sha256": "2a7b2913e67d11f900e3ba5940f907b336be56f7a4b6d2d021955e56e6e100ad",
+        "returncode": 0,
+        "stderr": "",
+        "checker": "ok 5 tokens\n"
+      }
+    ]
+  },
+  {
+    "key": "exp_sparse",
+    "problem": "exp_of_formal_power_series_sparse",
+    "source_sha256": "d87f8667058677582ce089d8d218015a4eee7c81d3b842708a599e9d8bd59a96",
+    "upstream_commit": "73876f1cbcf082d2b22722924b924d3d65a2f00e",
+    "mode": "samples",
+    "cases": [
+      {
+        "name": "example_00.in",
+        "status": "PASS",
+        "seconds": 0.1317481659934856,
+        "input_sha256": "1b1ed43de45a25d291f41ea8e65960832163c00d536cc08523d3058caf3a0048",
+        "returncode": 0,
+        "stderr": "",
+        "checker": "ok 5 tokens\n"
+      },
+      {
+        "name": "example_01.in",
+        "status": "PASS",
+        "seconds": 0.01250641600927338,
+        "input_sha256": "847ac124816e372babcb06f2bda72e63dd7a46b314be6a613b1cc9aa95dbe285",
+        "returncode": 0,
+        "stderr": "",
+        "checker": "ok 10 tokens\n"
+      },
+      {
+        "name": "example_02.in",
+        "status": "PASS",
+        "seconds": 0.012292082974454388,
+        "input_sha256": "88401cdce0f0466b01d2dbdde250d17cab1a783cd5a7d82bba6da2a3cb8c3338",
+        "returncode": 0,
+        "stderr": "",
+        "checker": "ok 10 tokens\n"
+      }
+    ]
+  },
+  {
+    "key": "pow",
+    "problem": "pow_of_formal_power_series",
+    "source_sha256": "e0e31c76ff8d70dc7c8ffca39cfc198225ee2fc7126e2b233249569e55170f11",
+    "upstream_commit": "73876f1cbcf082d2b22722924b924d3d65a2f00e",
+    "mode": "samples",
+    "cases": [
+      {
+        "name": "example_00.in",
+        "status": "PASS",
+        "seconds": 0.13640299998223782,
+        "input_sha256": "4563d710388ccc48cacf931e20ebe9bd9d1c06aaed10abb5c12878d24409880f",
+        "returncode": 0,
+        "stderr": "",
+        "checker": "ok 4 tokens\n"
+      },
+      {
+        "name": "example_01.in",
+        "status": "PASS",
+        "seconds": 0.012865208002040163,
+        "input_sha256": "8e0c15ffd4f66ecd00ae2b1f06fc72dc6868fc7437cde860dcb6471289b1ec27",
+        "returncode": 0,
+        "stderr": "",
+        "checker": "ok 2 tokens\n"
+      },
+      {
+        "name": "example_02.in",
+        "status": "PASS",
+        "seconds": 0.012348041025688872,
+        "input_sha256": "bb73ad5448cb7852521b5cec14268f3fde5b5e7c0eb6090f6252af825cccd4b4",
+        "returncode": 0,
+        "stderr": "",
+        "checker": "ok 2 tokens\n"
+      }
+    ]
+  },
+  {
+    "key": "pow_sparse",
+    "problem": "pow_of_formal_power_series_sparse",
+    "source_sha256": "9981602965feb5258d8ed8c70b43dd26022e575d9d4f8b05f2231810dcad3a21",
+    "upstream_commit": "73876f1cbcf082d2b22722924b924d3d65a2f00e",
+    "mode": "samples",
+    "cases": [
+      {
+        "name": "example_00.in",
+        "status": "PASS",
+        "seconds": 0.1303924589883536,
+        "input_sha256": "f302dfb47cb0469d2f167e03c69436e2821a251203b3a0b1b81aae279b429a6a",
+        "returncode": 0,
+        "stderr": "",
+        "checker": "ok 5 tokens\n"
+      },
+      {
+        "name": "example_01.in",
+        "status": "PASS",
+        "seconds": 0.01231649998226203,
+        "input_sha256": "16a7adc4a78223ec6eb7b00a7088423ba2ba98baf216e276661e6f766cf690bc",
+        "returncode": 0,
+        "stderr": "",
+        "checker": "ok 5 tokens\n"
+      },
+      {
+        "name": "example_02.in",
+        "status": "PASS",
+        "seconds": 0.01254533400060609,
+        "input_sha256": "40c7310c0b11bec689ea69147aa72b108b346b816f8d9fe7d6edba9e03b6545c",
+        "returncode": 0,
+        "stderr": "",
+        "checker": "ok 5 tokens\n"
+      },
+      {
+        "name": "example_03.in",
+        "status": "PASS",
+        "seconds": 0.0125994999834802,
+        "input_sha256": "0e812af589288e73166a2069b4b30aa7e3620d30611a67ad839bda48292428bb",
+        "returncode": 0,
+        "stderr": "",
+        "checker": "ok 5 tokens\n"
+      }
+    ]
+  },
+  {
+    "key": "sqrt",
+    "problem": "sqrt_of_formal_power_series",
+    "source_sha256": "b436bfc336fd2de99705ad08b9472ba244f0a31196e0a0782836c662aa08d831",
+    "upstream_commit": "73876f1cbcf082d2b22722924b924d3d65a2f00e",
+    "mode": "samples",
+    "cases": [
+      {
+        "name": "example_00.in",
+        "status": "PASS",
+        "seconds": 0.141261457989458,
+        "input_sha256": "499b345cf99f8e666c7e06ff8d3f0cdbdb6c16c4d1f13d9f2d3cde846ee77e6c",
+        "returncode": 0,
+        "stderr": "",
+        "checker": "ok OK\n"
+      },
+      {
+        "name": "example_01.in",
+        "status": "PASS",
+        "seconds": 0.012149540998507291,
+        "input_sha256": "558b48b3632480a2702e5c1b28eb95f87d40cb24d3cd9264f44f75ac8ff35baf",
+        "returncode": 0,
+        "stderr": "",
+        "checker": "ok OK\n"
+      }
+    ]
+  },
+  {
+    "key": "sqrt_sparse",
+    "problem": "sqrt_of_formal_power_series_sparse",
+    "source_sha256": "a9946f7c2318724639b13b96c6ead00b2737dace871c262de33e49265403167a",
+    "upstream_commit": "73876f1cbcf082d2b22722924b924d3d65a2f00e",
+    "mode": "samples",
+    "cases": [
+      {
+        "name": "example_00.in",
+        "status": "PASS",
+        "seconds": 0.13289537499076687,
+        "input_sha256": "d9b564c4b15829acd5f02b99dc79398a04d9066456da1bdb61ef58d4dc1b203d",
+        "returncode": 0,
+        "stderr": "",
+        "checker": "ok OK\n"
+      },
+      {
+        "name": "example_01.in",
+        "status": "PASS",
+        "seconds": 0.0120954169833567,
+        "input_sha256": "ad7f92313a1ace9d65a185e987fe5097e9bd93e8744880093749f3a54d7c2725",
+        "returncode": 0,
+        "stderr": "",
+        "checker": "ok OK\n"
+      },
+      {
+        "name": "example_02.in",
+        "status": "PASS",
+        "seconds": 0.012333292019320652,
+        "input_sha256": "b6389159960d2522854674449b0124aa3b2302556663a40cf47c7225c47f71ca",
+        "returncode": 0,
+        "stderr": "",
+        "checker": "ok OK\n"
+      }
+    ]
+  },
+  {
+    "key": "composition",
+    "problem": "composition_of_formal_power_series",
+    "source_sha256": "d644e44c97044ac4b22371638430b4baa918e80a8cd89711d265dcdd718b5e54",
+    "upstream_commit": "73876f1cbcf082d2b22722924b924d3d65a2f00e",
+    "mode": "samples",
+    "cases": [
+      {
+        "name": "example_00.in",
+        "status": "PASS",
+        "seconds": 0.1368755000003148,
+        "input_sha256": "2eb7de1f18b179172d224b4f373ecbb661dd167cb16322b550c32ef9a972fcdd",
+        "returncode": 0,
+        "stderr": "",
+        "checker": "ok 5 tokens\n"
+      }
+    ]
+  },
+  {
+    "key": "compositional_inverse",
+    "problem": "compositional_inverse_of_formal_power_series",
+    "source_sha256": "af13d9a634518d527efe2b04f457fa575554ed1bd638c5f30ae3cca129d1c01e",
+    "upstream_commit": "73876f1cbcf082d2b22722924b924d3d65a2f00e",
+    "mode": "samples",
+    "cases": [
+      {
+        "name": "example_00.in",
+        "status": "PASS",
+        "seconds": 0.13511612499132752,
+        "input_sha256": "2a7b2913e67d11f900e3ba5940f907b336be56f7a4b6d2d021955e56e6e100ad",
+        "returncode": 0,
+        "stderr": "",
+        "checker": "ok 5 tokens\n"
+      }
+    ]
+  },
+  {
+    "key": "composition_large",
+    "problem": "composition_of_formal_power_series_large",
+    "source_sha256": "d644e44c97044ac4b22371638430b4baa918e80a8cd89711d265dcdd718b5e54",
+    "upstream_commit": "73876f1cbcf082d2b22722924b924d3d65a2f00e",
+    "mode": "samples",
+    "cases": [
+      {
+        "name": "example_00.in",
+        "status": "PASS",
+        "seconds": 0.15143916598754004,
+        "input_sha256": "2eb7de1f18b179172d224b4f373ecbb661dd167cb16322b550c32ef9a972fcdd",
+        "returncode": 0,
+        "stderr": "",
+        "checker": "ok 5 tokens\n"
+      }
+    ]
+  },
+  {
+    "key": "compositional_inverse_large",
+    "problem": "compositional_inverse_of_formal_power_series_large",
+    "source_sha256": "af13d9a634518d527efe2b04f457fa575554ed1bd638c5f30ae3cca129d1c01e",
+    "upstream_commit": "73876f1cbcf082d2b22722924b924d3d65a2f00e",
+    "mode": "samples",
+    "cases": [
+      {
+        "name": "example_00.in",
+        "status": "PASS",
+        "seconds": 0.14214324997738004,
+        "input_sha256": "2a7b2913e67d11f900e3ba5940f907b336be56f7a4b6d2d021955e56e6e100ad",
+        "returncode": 0,
+        "stderr": "",
+        "checker": "ok 5 tokens\n"
+      }
+    ]
+  },
+  {
+    "key": "convolution_998244353",
+    "problem": "convolution_mod",
+    "source_sha256": "02f4b7be36bbc472331683982c5a217a585e92eeffe758f88f83035c47f46ab0",
+    "upstream_commit": "73876f1cbcf082d2b22722924b924d3d65a2f00e",
+    "mode": "samples",
+    "cases": [
+      {
+        "name": "example_00.in",
+        "status": "PASS",
+        "seconds": 0.13481799999135546,
+        "input_sha256": "791ce85d065df0981bec48053b908ae230fd083a23b7e4f15c55bbfc09d5b09e",
+        "returncode": 0,
+        "stderr": "",
+        "checker": "ok 8 tokens\n"
+      },
+      {
+        "name": "example_01.in",
+        "status": "PASS",
+        "seconds": 0.01237816602224484,
+        "input_sha256": "cb82ca85c390fabfd1c38aa4d97d76071db8fb8ba0e70ba6179f525564e40cd1",
+        "returncode": 0,
+        "stderr": "",
+        "checker": "ok \"871938225\"\n"
+      }
+    ]
+  },
+  {
+    "key": "convolution_1000000007",
+    "problem": "convolution_mod_1000000007",
+    "source_sha256": "c588aedb4e6cb8092acd200ec67efc358e040f01e0531b55a1b37c12b1900230",
+    "upstream_commit": "73876f1cbcf082d2b22722924b924d3d65a2f00e",
+    "mode": "samples",
+    "cases": [
+      {
+        "name": "example_00.in",
+        "status": "PASS",
+        "seconds": 0.1327485420042649,
+        "input_sha256": "791ce85d065df0981bec48053b908ae230fd083a23b7e4f15c55bbfc09d5b09e",
+        "returncode": 0,
+        "stderr": "",
+        "checker": "ok 8 tokens\n"
+      },
+      {
+        "name": "example_01.in",
+        "status": "PASS",
+        "seconds": 0.01231654200819321,
+        "input_sha256": "cb82ca85c390fabfd1c38aa4d97d76071db8fb8ba0e70ba6179f525564e40cd1",
+        "returncode": 0,
+        "stderr": "",
+        "checker": "ok \"999300007\"\n"
+      }
+    ]
+  },
+  {
+    "key": "division",
+    "problem": "division_of_polynomials",
+    "source_sha256": "65fdc30cb63f804a64c7c44db173650e0ee7366c37f9f946d7c5fda7f9c3da82",
+    "upstream_commit": "73876f1cbcf082d2b22722924b924d3d65a2f00e",
+    "mode": "samples",
+    "cases": [
+      {
+        "name": "example_00.in",
+        "status": "PASS",
+        "seconds": 0.1341308749979362,
+        "input_sha256": "1145cedf16651d031da879ffb9d97245796115ccb8f41743877116717d2508e0",
+        "returncode": 0,
+        "stderr": "",
+        "checker": "ok 9 tokens\n"
+      },
+      {
+        "name": "example_01.in",
+        "status": "PASS",
+        "seconds": 0.012467207998270169,
+        "input_sha256": "791ce85d065df0981bec48053b908ae230fd083a23b7e4f15c55bbfc09d5b09e",
+        "returncode": 0,
+        "stderr": "",
+        "checker": "ok 6 tokens\n"
+      },
+      {
+        "name": "example_02.in",
+        "status": "PASS",
+        "seconds": 0.012364834023173898,
+        "input_sha256": "8b88a21ef03528d1b1eb90b24e9a05cb51fc2f935555f94f3999f2f6467ddf0f",
+        "returncode": 0,
+        "stderr": "",
+        "checker": "ok 3 tokens\n"
+      },
+      {
+        "name": "example_03.in",
+        "status": "PASS",
+        "seconds": 0.012383209017571062,
+        "input_sha256": "2909091b3ecb6fc844ec6dcbca05cab8fd69358b0383b1b6704b22366179e862",
+        "returncode": 0,
+        "stderr": "",
+        "checker": "ok 6 tokens\n"
+      }
+    ]
+  },
+  {
+    "key": "polynomial_inverse",
+    "problem": "inv_of_polynomials",
+    "source_sha256": "2acab25942934639ee525e80fde13ca5f9458caa71728bca0e39bca8bd709bb0",
+    "upstream_commit": "73876f1cbcf082d2b22722924b924d3d65a2f00e",
+    "mode": "samples",
+    "cases": [
+      {
+        "name": "example_00.in",
+        "status": "PASS",
+        "seconds": 0.15173225000035018,
+        "input_sha256": "5fca8b5a66dc8066f387fc28c7b5e3ebfc6b6c6f7e5f69f494991e752ecc6de7",
+        "returncode": 0,
+        "stderr": "",
+        "checker": "ok 3 tokens\n"
+      },
+      {
+        "name": "example_01.in",
+        "status": "PASS",
+        "seconds": 0.012243874982232228,
+        "input_sha256": "4352f9622b49624969b5180daff3c6073a27bce71e4095b1d32f927dcfa006ce",
+        "returncode": 0,
+        "stderr": "",
+        "checker": "ok \"0\"\n"
+      },
+      {
+        "name": "example_02.in",
+        "status": "PASS",
+        "seconds": 0.011983874981524423,
+        "input_sha256": "bf8a86877db5fd22df762716e97adda2e8c1ccd4b954e04dc993005f01275320",
+        "returncode": 0,
+        "stderr": "",
+        "checker": "ok \"-1\"\n"
+      }
+    ]
+  },
+  {
+    "key": "multipoint",
+    "problem": "multipoint_evaluation",
+    "source_sha256": "e8b1f2f1142a35576a5171b987d283152fd46eb98feb138a38e5faf09de51650",
+    "upstream_commit": "73876f1cbcf082d2b22722924b924d3d65a2f00e",
+    "mode": "samples",
+    "cases": [
+      {
+        "name": "example_00.in",
+        "status": "PASS",
+        "seconds": 0.1336874170228839,
+        "input_sha256": "791ce85d065df0981bec48053b908ae230fd083a23b7e4f15c55bbfc09d5b09e",
+        "returncode": 0,
+        "stderr": "",
+        "checker": "ok 5 tokens\n"
+      },
+      {
+        "name": "example_01.in",
+        "status": "PASS",
+        "seconds": 0.012280291004572064,
+        "input_sha256": "cb82ca85c390fabfd1c38aa4d97d76071db8fb8ba0e70ba6179f525564e40cd1",
+        "returncode": 0,
+        "stderr": "",
+        "checker": "ok \"10000000\"\n"
+      }
+    ]
+  },
+  {
+    "key": "interpolation",
+    "problem": "polynomial_interpolation",
+    "source_sha256": "c0c13f8a0d87c4051042d1126da1150b17e261459014833f1dae6b2644dcb220",
+    "upstream_commit": "73876f1cbcf082d2b22722924b924d3d65a2f00e",
+    "mode": "samples",
+    "cases": [
+      {
+        "name": "example_00.in",
+        "status": "PASS",
+        "seconds": 0.16268487498746254,
+        "input_sha256": "745a5014aa4ade554b909ed460261559945e0cb444366b1fc0711648895aaa3f",
+        "returncode": 0,
+        "stderr": "",
+        "checker": "ok 5 tokens\n"
+      },
+      {
+        "name": "example_01.in",
+        "status": "PASS",
+        "seconds": 0.01259037500130944,
+        "input_sha256": "8f0ebdb9a3d767b099c3e12776d35d390525a3f6b28090aea0cfd82c1bfcea72",
+        "returncode": 0,
+        "stderr": "",
+        "checker": "ok \"10000000\"\n"
+      }
+    ]
+  },
+  {
+    "key": "sampling_shift",
+    "problem": "shift_of_sampling_points_of_polynomial",
+    "source_sha256": "536041303f246756acbd3463b4ca941fb98df03f3d2a2b302457c53f00561143",
+    "upstream_commit": "73876f1cbcf082d2b22722924b924d3d65a2f00e",
+    "mode": "samples",
+    "cases": [
+      {
+        "name": "example_00.in",
+        "status": "PASS",
+        "seconds": 0.13543816699529998,
+        "input_sha256": "65b93d63e479711a1dc4dd0c8ec9407eb68bc0ffd93945f0b4dc00ccfed462e1",
+        "returncode": 0,
+        "stderr": "",
+        "checker": "ok 5 tokens\n"
+      },
+      {
+        "name": "example_01.in",
+        "status": "PASS",
+        "seconds": 0.012670291995164007,
+        "input_sha256": "061cbceb31a23bfc740ce7c309733fc6a1b2ef390916c87fa4313cea05b03bf7",
+        "returncode": 0,
+        "stderr": "",
+        "checker": "ok 5 tokens\n"
+      }
+    ]
+  },
+  {
+    "key": "bernoulli",
+    "problem": "bernoulli_number",
+    "source_sha256": "ea190666d793d82d40c25623592c4e1a6cf2abf0ab5e1f81a5ced5ce8281d077",
+    "upstream_commit": "73876f1cbcf082d2b22722924b924d3d65a2f00e",
+    "mode": "samples",
+    "cases": [
+      {
+        "name": "example_00.in",
+        "status": "PASS",
+        "seconds": 0.18626333298743702,
+        "input_sha256": "917df3320d778ddbaa5c5c7742bc4046bf803c36ed2b050f30844ed206783469",
+        "returncode": 0,
+        "stderr": "",
+        "checker": "ok 11 tokens\n"
+      }
+    ]
+  },
+  {
+    "key": "prefix_exclusive",
+    "problem": "prefix_sum_of_polynomial",
+    "source_sha256": "62bb81b8e1fafa8e67da3be2ac80a539adf6853db902b2301ac86d426a0069cb",
+    "upstream_commit": "73876f1cbcf082d2b22722924b924d3d65a2f00e",
+    "mode": "samples",
+    "cases": [
+      {
+        "name": "example_00.in",
+        "status": "PASS",
+        "seconds": 0.13447699998505414,
+        "input_sha256": "f19d1b4e07b0194c5b455266bbc842aaacdaa70714a5c9f520f4223134662ecd",
+        "returncode": 0,
+        "stderr": "",
+        "checker": "ok 6 tokens\n"
+      },
+      {
+        "name": "example_01.in",
+        "status": "PASS",
+        "seconds": 0.013582457992015406,
+        "input_sha256": "b0e239fa9123fc603f06af64b947fee469aec9351fa37c607639b82ff60b2f07",
+        "returncode": 0,
+        "stderr": "",
+        "checker": "ok 3 tokens\n"
+      }
+    ]
+  },
+  {
+    "key": "prefix_inclusive",
+    "problem": "prefix_sum_of_polynomial",
+    "source_sha256": "3a1670f036d6223f7c13d41deb3c56e0c7e992c5769b85f14cbf5b9bae03bf6c",
+    "upstream_commit": "73876f1cbcf082d2b22722924b924d3d65a2f00e",
+    "mode": "samples",
+    "cases": [
+      {
+        "name": "example_00.in",
+        "status": "PASS",
+        "seconds": 0.14801041697501205,
+        "input_sha256": "f19d1b4e07b0194c5b455266bbc842aaacdaa70714a5c9f520f4223134662ecd",
+        "returncode": 0,
+        "stderr": "",
+        "checker": "ok 6 tokens\n"
+      },
+      {
+        "name": "example_01.in",
+        "status": "PASS",
+        "seconds": 0.012900583998998627,
+        "input_sha256": "b0e239fa9123fc603f06af64b947fee469aec9351fa37c607639b82ff60b2f07",
+        "returncode": 0,
+        "stderr": "",
+        "checker": "ok 3 tokens\n"
+      }
+    ]
+  },
+  {
+    "key": "mod_sqrt",
+    "problem": "sqrt_mod",
+    "source_sha256": "85cc36c5ab91a799aee200345c2c954a68ef4c9a68c1b02fcb8ee815c55634c5",
+    "upstream_commit": "73876f1cbcf082d2b22722924b924d3d65a2f00e",
+    "mode": "samples",
+    "cases": [
+      {
+        "name": "example_00.in",
+        "status": "PASS",
+        "seconds": 0.139501666999422,
+        "input_sha256": "3c75be04f4676279d0ac0806390c4be2ccd306787e9f720930c6f58017e52678",
+        "returncode": 0,
+        "stderr": "",
+        "checker": "ok OK\n"
+      }
+    ]
+  },
+  {
+    "key": "relaxed",
+    "problem": "convolution_mod",
+    "source_sha256": "9a838232f4674a41e4aa9c9b7305677177408e804dfd9cfbb18c91439d6b4507",
+    "upstream_commit": "73876f1cbcf082d2b22722924b924d3d65a2f00e",
+    "mode": "samples",
+    "cases": [
+      {
+        "name": "example_00.in",
+        "status": "PASS",
+        "seconds": 0.1483836249972228,
+        "input_sha256": "791ce85d065df0981bec48053b908ae230fd083a23b7e4f15c55bbfc09d5b09e",
+        "returncode": 0,
+        "stderr": "",
+        "checker": "ok 8 tokens\n"
+      },
+      {
+        "name": "example_01.in",
+        "status": "PASS",
+        "seconds": 0.012729624984785914,
+        "input_sha256": "cb82ca85c390fabfd1c38aa4d97d76071db8fb8ba0e70ba6179f525564e40cd1",
+        "returncode": 0,
+        "stderr": "",
+        "checker": "ok \"871938225\"\n"
+      }
+    ]
+  },
+  {
+    "key": "newton",
+    "problem": "inv_of_formal_power_series",
+    "source_sha256": "62cf68957197210eea6ed1ebf86a19d8e29ef728077d28396144220199bfcabf",
+    "upstream_commit": "73876f1cbcf082d2b22722924b924d3d65a2f00e",
+    "mode": "samples",
+    "cases": [
+      {
+        "name": "example_00.in",
+        "status": "PASS",
+        "seconds": 0.1418625410005916,
+        "input_sha256": "5ac9dad8173c53309e4942866f855d01391fbf0b52ba0380dc0e5806d82365d5",
+        "returncode": 0,
+        "stderr": "",
+        "checker": "ok 5 tokens\n"
+      }
+    ]
+  },
+  {
+    "key": "pow_unit",
+    "problem": "sqrt_of_formal_power_series",
+    "source_sha256": "fe2fb0ca5244ffc1220865dbec0767fa741ed2d0b422695a921ac58bd113b287",
+    "upstream_commit": "73876f1cbcf082d2b22722924b924d3d65a2f00e",
+    "mode": "samples",
+    "cases": [
+      {
+        "name": "example_00.in",
+        "status": "PASS",
+        "seconds": 0.13720437500160187,
+        "input_sha256": "499b345cf99f8e666c7e06ff8d3f0cdbdb6c16c4d1f13d9f2d3cde846ee77e6c",
+        "returncode": 0,
+        "stderr": "",
+        "checker": "ok OK\n"
+      },
+      {
+        "name": "example_01.in",
+        "status": "PASS",
+        "seconds": 0.013213041995186359,
+        "input_sha256": "558b48b3632480a2702e5c1b28eb95f87d40cb24d3cd9264f44f75ac8ff35baf",
+        "returncode": 0,
+        "stderr": "",
+        "checker": "ok OK\n"
+      }
+    ]
+  }
+]

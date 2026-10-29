@@ -1,0 +1,20 @@
+COMPILED polynomial_factorial
+COMPILED p_recursive_factorial
+COMPILED factorial-correct (cached)
+COMPILED factorial-checker (cached)
+GENERATED factorial
+polynomial_factorial example_00.in PASS 0.380s
+polynomial_factorial near_half_00.in PASS 0.315s
+polynomial_factorial near_half_01.in PASS 0.343s
+polynomial_factorial near_max_00.in PASS 0.386s
+polynomial_factorial near_max_01.in PASS 0.282s
+polynomial_factorial random_00.in PASS 0.137s
+polynomial_factorial random_01.in PASS 0.092s
+p_recursive_factorial example_00.in PASS 0.363s
+p_recursive_factorial near_half_00.in PASS 0.500s
+p_recursive_factorial near_half_01.in PASS 0.523s
+p_recursive_factorial near_max_00.in PASS 0.524s
+p_recursive_factorial near_max_01.in PASS 0.775s
+p_recursive_factorial random_00.in PASS 0.384s
+p_recursive_factorial random_01.in PASS 0.307s
+PASS 2 adapters, 14 official cases.

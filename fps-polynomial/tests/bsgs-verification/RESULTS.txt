@@ -1,0 +1,49 @@
+BSGS 多項式行列積 / P-recursive 数列 検証結果
+確認日時: 2026-10-29T23:54:52.331782+09:00
+環境: macOS-15.6.1-arm64-arm-64bit
+コンパイラ: g++-14 (Homebrew GCC 14.2.0) 14.2.0
+
+実装: ../../polynomial-matrix-product.cpp
+全関数の日本語入出力説明・使用例・条件・計算量は実装先頭に記載。
+
+ローカル検証:
+- GCC -O2: 既存 5 スイート + 新規 matrix-bsgs スイート、全単体 include が成功。
+- Clang AddressSanitizer + UndefinedBehaviorSanitizer: 同じ検証がすべて成功。
+- 固定乱数による非可換行列積・P-recursive 漸化式と、独立した逐次計算の比較。
+- mod 998244353 / 1000000007 / 小素数 / 動的 mod の切替。
+- 空積・空行列・零行列・末尾の零・法をまたぐ区間・INT64_MAX の添字。
+- 特異な漸化式（必要な分母が零）は nullopt。
+- FPS の指定係数を疎な累乗版と比較。大きな次数は C(p-1,n)=(-1)^n でも確認。
+- 一般の行列・漸化式はローカル検証。オンライン検証の対象は下記の階乗 2 通り。
+
+Library Checker (公式 Factorial):
+- polynomial_factorial: AC, 7 ケース, https://judge.yosupo.jp/submission/414001
+- p_recursive_factorial: AC, 7 ケース, https://judge.yosupo.jp/submission/414002
+- 公式生成器と公式チェッカーによるローカル実行も 2 本 x 7 ケース = 14 ケース成功。
+- 提出ソース・現在の依存ライブラリの SHA-256 を照合済み (manifest.json)。
+- 上流コミット: 73876f1cbcf082d2b22722924b924d3d65a2f00e
+
+ベンチマーク (GCC -O2、関数呼出しの実時間。実行環境に依存):
+BSGS n=1000000 answer=829729473 seconds=0.004169
+sparse n=1000000 answer=829729473 seconds=0.030811
+BSGS n=10000000 answer=671926596 seconds=0.015209
+sparse n=10000000 answer=671926596 seconds=0.360213
+binomial n=100000000 answer=1 seconds=0.030817
+binomial n=998244351 answer=998244352 seconds=0.089077
+binomial n=998244352 answer=1 seconds=0.060800
+
+再現手順 (fps-polynomial ディレクトリから):
+  tests/run-tests.sh
+  CXX=clang++ CXXFLAGS='-O1 -g -fsanitize=address,undefined -fno-omit-frame-pointer' tests/run-tests.sh
+  g++-14 -std=c++17 -O2 tests/matrix-bsgs-benchmark.cpp -o /tmp/fps-bsgs-benchmark
+  /tmp/fps-bsgs-benchmark
+  python3 tests/bsgs-verification/verify.py build
+  python3 tests/bsgs-verification/verify.py local /path/to/library-checker-problems
+  python3 tests/bsgs-verification/verify.py submit
+submit は匿名提出する。同一ソースで判定取得済みなら再提出しない。
+
+適用範囲:
+- 行列のサイズと係数多項式の次数が小さいときに有効。
+- fps_pow_coefficient_bsgs(f,k,n) は 0<=n<mod。
+- 内部畳み込みの長さ・実メモリの制約は既存 FPS に従う。
+- 定数行列は二分累乗、短い区間は逐次計算、長い区間は BSGS。

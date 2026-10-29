@@ -1,9 +1,30 @@
 /*
-  - fpsの元fの平方根を返す
-    - Tonelli-shanks付き
+<FPS の平方根 (Newton 法 + Tonelli-Shanks)>
+  #include "fps-sqrt.cpp"
+  auto g = fps_sqrt(f, N);  // g*g == f (mod x^N)、N 項を返す
+
+  [各関数の入力と返り値]
+    fps_sqrt(f, deg=-1)
+      入力: FPS f の係数列と、求める項数 deg。
+        deg を省略または -1 にすると f.size() 項を求める。
+      返り値: g(x)^2=f(x) mod x^deg を満たす g の係数列（長さ deg の fps）。
+        解が複数ある場合はそのうち一つを返す。先頭が 0 の場合に自由に選べる
+        高次係数は 0 とする。f=0 mod x^deg なら deg 項すべて 0 を返す。
+        平方根が存在しなければ空列。deg=0 の正常な結果も空列。
+    mod_sqrt(a,p)
+      入力: 整数 a と法 p（ともに int64_t）、0<=a<p、2<p<2^30 の素数 p。
+      返り値: r*r=a mod p を満たす 0<=r<p の整数 r（int64_t）。
+        存在しなければ -1。複数ある場合、最小の平方根を返す保証はない。
+
+  [計算量・条件]
+    fps_sqrt は O(N log N + log^2 p)。法は 2<p<2^30 の素数。
 */
 
-int64_t mod_sqrt(const int64_t &a, const int64_t &p) {
+#ifndef FPS_SQRT_CPP
+#define FPS_SQRT_CPP
+#include "formal-power-series.cpp"
+
+inline int64_t mod_sqrt(const int64_t &a, const int64_t &p) {
   assert(0 <= a && a < p);
   if (a < 2) return a;
   using Mint = ArbitraryLazyMontgomeryModInt<409075245>;
@@ -36,13 +57,15 @@ int64_t mod_sqrt(const int64_t &a, const int64_t &p) {
 template <typename mint>
 FormalPowerSeries<mint> fps_sqrt(const FormalPowerSeries<mint> &f, int deg = -1) {
   if (deg == -1) deg = (int)f.size();
+  assert(deg >= 0);
+  if (deg == 0) return {};
   if ((int)f.size() == 0) return FormalPowerSeries<mint>(deg, 0);
   if (f[0] == mint(0)) {
-    for (int i = 1; i < (int)f.size(); i++) {
+    for (int i = 1; i < min(deg, (int)f.size()); i++) {
       if (f[i] != mint(0)) {
         if (i & 1) return {};
         if (deg - i / 2 <= 0) break;
-        auto ret = fps_sqrt(f >> i, deg - i / 2);
+        auto ret = fps_sqrt((f >> i).pre(deg - i), deg - i);
         if (ret.empty()) return {};
         ret = ret << (i / 2);
         if ((int)ret.size() < deg) ret.resize(deg, mint(0));
@@ -58,7 +81,10 @@ FormalPowerSeries<mint> fps_sqrt(const FormalPowerSeries<mint> &f, int deg = -1)
   FormalPowerSeries<mint> ret = {mint(sqr)};
   mint inv2 = mint(2).inverse();
   for (int i = 1; i < deg; i <<= 1) {
-    ret = (ret + f.pre(i << 1) * ret.inv(i << 1)) * inv2;
+    int next = min(deg, i << 1);
+    ret = (ret + (f.pre(next) * ret.inv(next)).pre(next)) * inv2;
   }
   return ret.pre(deg);
 }
+
+#endif  // FPS_SQRT_CPP

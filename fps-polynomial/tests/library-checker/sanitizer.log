@@ -1,0 +1,16 @@
+core/sparse checks passed, mod=998244353
+core/sparse checks passed, mod=1000000007
+core/sparse checks passed, mod=17
+composition random checks passed, mod = 998244353
+composition random checks passed, mod = 1000000007
+polynomial random tests passed, mod=998244353
+polynomial random tests passed, mod=1000000007
+polynomial random tests passed, mod=17
+polynomial scale n=1024, seconds=0.0514908
+polynomial scale n=4096, seconds=0.272883
+polynomial tests passed
+relaxed n=16384, mod=998244353: 0.141611 s
+relaxed n=16384, mod=1000000007: 0.226927 s
+sums / sampling shift / relaxed multiplication: OK
+alias / constant modulus / exhaustive sqrt / modular wrap / dynamic mod / NTT limit: OK
+All FPS tests passed.
